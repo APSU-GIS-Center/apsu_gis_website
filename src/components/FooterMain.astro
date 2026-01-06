@@ -37,7 +37,7 @@ const { settings } = Astro.props
         <!-- Nav -->
         <nav class="flex flex-col">
 
-          { settings.nav.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
+          { settings.nav.flatMap(item => item.submenu ? [item, ...item.submenu] : [item]).filter(i => i.link && i.title !== "—").map( item =>
 
             <a href={ item.link }>
               { item.title }
@@ -71,10 +71,10 @@ const { settings } = Astro.props
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
         <!-- Copyright/Date -->
-        <a href="https://blackspike.com/">by blackspike.com</a>
+        <span>&copy; {new Date().getFullYear()} Austin Peay State University GIS Center</span>
 
         <!-- Credits -->
-        <a href="/credits">about / credits</a>
+        <a href="/privacy">Privacy Policy</a>
 
       </nav>
 

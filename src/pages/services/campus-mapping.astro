@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Campus Mapping - APSU GIS Center" description="Comprehensive mapping services for the Austin Peay State University campus.">
+  <section class="bs-container py-24">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="bs-h1 mb-6 text-apsu-red">Campus Mapping</h1>
+      <p class="bs-body-text text-xl mb-12">
+        The authoritative source for spatial data regarding APSU's physical campus environment.
+      </p>
+
+      <div class="grid gap-8">
+        <div class="bg-bs-surface-2 p-8 rounded-xl border-l-4 border-apsu-red">
+            <h2 class="bs-h3 mb-2">Interactive Campus Map</h2>
+            <p class="text-bs-foreground-dark mb-4">Find buildings, parking, and accessibility routes.</p>
+            <a href="/maps-data" class="bs-btn text-sm">Launch Map Portal</a>
+        </div>
+
+        <div class="bg-bs-surface-2 p-8 rounded-xl">
+            <h2 class="bs-h3 mb-4">Services for Departments</h2>
+            <ul class="grid md:grid-cols-2 gap-4">
+                <li class="flex items-center gap-3">
+                    <span class="text-apsu-red">✓</span> Event Mapping
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-apsu-red">✓</span> Utility Locates
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-apsu-red">✓</span> Interior Floorplans
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-apsu-red">✓</span> Parking Analysis
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

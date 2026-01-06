@@ -2,8 +2,11 @@
 
 @theme {
 
-  --font-display: var(--font-inter-display), "ui-sans-serif", "system-ui", "sans-serif";
-  --font-body: var(--font-inter), "ui-sans-serif", "system-ui", "sans-serif";
+  --font-display: "Montserrat", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: "EB Garamond", "ui-sans-serif", "system-ui", "sans-serif";
+
+  --color-apsu-red: #C41E3A;
+  --color-primary: var(--color-apsu-red);
 
   --color-bs-surface-0: #121212;
   --color-bs-surface-1: #18181B;

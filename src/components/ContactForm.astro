@@ -1,0 +1,34 @@
+---
+---
+<form name="contact" netlify method="POST" class="space-y-4">
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <div>
+    <label for="name" class="block text-sm font-medium text-bs-foreground-light mb-1">Name</label>
+    <input type="text" name="name" id="name" required class="w-full bg-bs-surface-3 border border-transparent focus:border-apsu-red rounded-md px-4 py-3 text-white focus:outline-none transition-colors" />
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-bs-foreground-light mb-1">Email</label>
+    <input type="email" name="email" id="email" required class="w-full bg-bs-surface-3 border border-transparent focus:border-apsu-red rounded-md px-4 py-3 text-white focus:outline-none transition-colors" />
+  </div>
+
+  <div>
+    <label for="subject" class="block text-sm font-medium text-bs-foreground-light mb-1">Subject</label>
+    <select name="subject" id="subject" class="w-full bg-bs-surface-3 border border-transparent focus:border-apsu-red rounded-md px-4 py-3 text-white focus:outline-none transition-colors">
+      <option value="General Inquiry">General Inquiry</option>
+      <option value="Request Services">Request GIS Services</option>
+      <option value="Student Internship">Student Internship Application</option>
+      <option value="Partnership">Partnership Opportunity</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class="block text-sm font-medium text-bs-foreground-light mb-1">Message</label>
+    <textarea name="message" id="message" rows="4" required class="w-full bg-bs-surface-3 border border-transparent focus:border-apsu-red rounded-md px-4 py-3 text-white focus:outline-none transition-colors"></textarea>
+  </div>
+
+  <button type="submit" class="w-full bs-btn bg-apsu-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
+    Send Message
+  </button>
+</form>

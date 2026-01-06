@@ -1,0 +1,20 @@
+---
+const metrics = [
+  { label: "Community Partners", value: "30+" },
+  { label: "Data Layers Managed", value: "5k+" },
+  { label: "Square Miles Mapped", value: "1.2k" },
+  { label: "Students Trained", value: "100+" }
+];
+---
+<section class="py-24 bg-bs-surface-2">
+  <div class="bs-container">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {metrics.map(metric => (
+        <div>
+          <div class="text-4xl md:text-5xl font-bold text-apsu-red mb-2 font-display">{metric.value}</div>
+          <div class="text-bs-foreground-light font-medium">{metric.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

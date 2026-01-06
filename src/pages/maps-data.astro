@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Maps & Data - APSU GIS Center" description="Access our collection of interactive maps, dashboards, and geospatial data applications.">
+  <section class="bs-container py-24">
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h1 class="bs-h1 mb-6">Maps & Data Portal</h1>
+      <p class="bs-body-text text-lg text-bs-foreground-light">
+        Explore our suite of interactive mapping applications and data dashboards serving the campus and community.
+      </p>
+    </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Montgomery County -->
+      <a href="https://apsu-gis.maps.arcgis.com/apps/webappviewer/index.html?id=be2d2657b1124b419a2c8177ee4d1d29" target="_blank" class="block p-6 rounded-xl bg-bs-surface-2 hover:bg-bs-surface-3 transition-colors group">
+        <div class="aspect-video bg-bs-surface-3 rounded-lg mb-4 flex items-center justify-center text-4xl">
+          📍
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-apsu-red transition-colors">Montgomery County</h3>
+        <p class="text-sm text-bs-foreground-dark">Official GIS map for Montgomery County, TN.</p>
+      </a>
+
+      <!-- Cheatham County -->
+      <a href="http://apsu-gis.maps.arcgis.com/apps/webappviewer/index.html?id=57fda8c7174544f78bd70d9f11332ca7" target="_blank" class="block p-6 rounded-xl bg-bs-surface-2 hover:bg-bs-surface-3 transition-colors group">
+        <div class="aspect-video bg-bs-surface-3 rounded-lg mb-4 flex items-center justify-center text-4xl">
+          🏞️
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-apsu-red transition-colors">Cheatham County</h3>
+        <p class="text-sm text-bs-foreground-dark">Interactive parcel and zoning map for Cheatham County.</p>
+      </a>
+
+      <!-- Robertson County -->
+      <a href="https://apsu-gis.maps.arcgis.com/apps/webappviewer/index.html?id=e84517fc428f4e9f967f7b6196498c32" target="_blank" class="block p-6 rounded-xl bg-bs-surface-2 hover:bg-bs-surface-3 transition-colors group">
+        <div class="aspect-video bg-bs-surface-3 rounded-lg mb-4 flex items-center justify-center text-4xl">
+          🌾
+        </div>
+        <h3 class="text-xl font-bold mb-2 group-hover:text-apsu-red transition-colors">Robertson County</h3>
+        <p class="text-sm text-bs-foreground-dark">Comprehensive GIS viewer for Robertson County.</p>
+      </a>
+      
+      <!-- Call to Action Card -->
+      <div class="p-6 rounded-xl border border-dashed border-bs-surface-3 flex flex-col items-center justify-center text-center">
+        <h3 class="font-bold mb-2">Need Custom Data?</h3>
+        <p class="text-sm text-bs-foreground-dark mb-4">We build custom dashboards for organizations.</p>
+        <a href="/contact" class="bs-btn text-sm">Request Service</a>
+      </div>
+    </div>
+  </section>
+</Layout>

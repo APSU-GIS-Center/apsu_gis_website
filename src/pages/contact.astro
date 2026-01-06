@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Contact Us - APSU GIS Center" description="Get in touch with the APSU GIS Center for services, partnerships, or general inquiries.">
+  <section class="bs-container py-24 grid lg:grid-cols-2 gap-16">
+    <div>
+      <h1 class="bs-h1 mb-6">Get in Touch</h1>
+      <p class="bs-body-text text-lg text-bs-foreground-light mb-8">
+        We are ready to assist with your geospatial needs. Whether you need a custom map, data analysis, or student opportunities, reach out to us.
+      </p>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2">Location</h3>
+          <p class="text-bs-foreground-dark">
+            Austin Peay State University<br/>
+            Claxton Building/Maynard Mathematics and Computer Science Building<br/>
+            Clarksville, TN 37044
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+          <a href="mailto:gis@apsu.edu" class="text-apsu-red hover:text-white transition-colors">gis@apsu.edu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bs-surface-2 p-8 rounded-2xl">
+      <h2 class="text-2xl font-bold mb-6">Send us a message</h2>
+      <ContactForm />
+    </div>
+  </section>
+</Layout>

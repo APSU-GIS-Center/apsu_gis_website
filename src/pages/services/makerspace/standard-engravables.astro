@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import imgRedAlder from '../../../assets/makerspace/standard/red-alder-plaque.png';
+import imgRA1215 from '../../../assets/makerspace/standard/ra1215-plaque.jpg';
+import imgRA79 from '../../../assets/makerspace/standard/ra79-plaque.jpg';
+import imgVPX28B from '../../../assets/makerspace/standard/vpx28b-rd-acrylic.jpg';
+import imgVPX27B from '../../../assets/makerspace/standard/vpx27b-rd-acrylic.jpg';
+import imgBAM26 from '../../../assets/makerspace/standard/bam26-cutting-board.jpg';
+import imgCrystalPeak from '../../../assets/makerspace/standard/crystal-peak-award.png';
+import imgCrystalBadge from '../../../assets/makerspace/standard/crystal-badge-award.png';
+import imgWalnutPiano from '../../../assets/makerspace/standard/walnut-piano-finish-plaque.jpg';
+import imgBlackWalnut from '../../../assets/makerspace/standard/black-walnut-plaque.jpg';
+import imgCoasters from '../../../assets/makerspace/standard/slate-coasters.png';
+
+const products = [
+  { name: "12x15 Red Alder Plaque", price: "$63.77", image: imgRedAlder },
+  { name: "10.5x13 Red Alder Plaque", price: "$54.16", image: imgRA1215 },
+  { name: "7x9 Red Alder Plaque", price: "$41.13", image: imgRA79 },
+  { name: "Peak Acrylic Award", price: "$106.08", image: imgVPX28B },
+  { name: "Wave Acrylic Award", price: "$103.15", image: imgVPX27B },
+  { name: "Bamboo Cutting Board", price: "$54.14", image: imgBAM26 },
+  { name: "Semi Oval Crystal Award", price: "$57.27-$62.70", image: imgCrystalPeak }, // Using Peak as placeholder or similar if missing, checking list
+  { name: "Crystal Peak Award", price: "$163.23", image: imgCrystalPeak },
+  { name: "Crystal Badge Award", price: "$147.82", image: imgCrystalBadge },
+  { name: "8×10 Walnut Piano Finish Plaque", price: "$62.50", image: imgWalnutPiano },
+  { name: "8×10 Black Walnut Plaque", price: "$59.80", image: imgBlackWalnut },
+  { name: "Slate Coasters", price: "$8.00", image: imgCoasters },
+];
+---
+
+<Layout title="Standard Engravables - APSU GIS Center" description="Custom engraved awards, plaques, and gifts.">
+  <section class="bs-container py-24">
+    <div class="max-w-4xl mx-auto mb-16 text-center">
+      <h1 class="bs-h1 mb-6 text-apsu-red">Standard Engravables</h1>
+      <p class="bs-body-text text-xl text-bs-foreground-light">
+        All awards are custom engraved with your logo, text, or name for a one-of-a-kind finish that never peels or fades. Perfect for gifts, events, or branded merchandise.
+      </p>
+      <p class="mt-4 text-sm text-bs-foreground-dark">* Prices include the cost of engraving.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map(product => (
+        <div class="bg-bs-surface-2 p-6 rounded-xl flex flex-col items-center text-center hover:bg-bs-surface-3 transition-colors group">
+          <div class="w-full aspect-square bg-white rounded-lg mb-4 flex items-center justify-center shadow-inner overflow-hidden relative">
+            <Image src={product.image} alt={product.name} class="object-contain w-full h-full p-4 group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-white">{product.name}</h3>
+          <p class="text-2xl font-bold text-apsu-red">{product.price}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <div class="bg-bs-surface-2 p-8 rounded-2xl inline-block max-w-2xl">
+        <h3 class="text-2xl font-bold mb-4">Ready to Order?</h3>
+        <p class="mb-6">Contact us to finalize your design and place an order.</p>
+        <a href="/contact" class="bs-btn bg-apsu-red text-white">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import imgWellScreen from '../../../assets/makerspace/custom/3d-printed-well-screen.png';
+import imgBookmark from '../../../assets/makerspace/custom/3d-printed-bookmark.png';
+import imgNameTag from '../../../assets/makerspace/custom/sublimated-name-tag.png';
+import imgAcrylicCut from '../../../assets/makerspace/custom/acrylic-cut-outs.png';
+import imgStateCut from '../../../assets/makerspace/custom/state-cut-out.png';
+import imgCutOuts from '../../../assets/makerspace/custom/cut-outs.png';
+import imgMultiColor from '../../../assets/makerspace/custom/multi-color-3d-print.png';
+import imgResin from '../../../assets/makerspace/custom/resin-3d-prints.png';
+import imgFilament from '../../../assets/makerspace/custom/filament-3d-print.png';
+import imgElevation from '../../../assets/makerspace/custom/wood-cut-elevation-map.png';
+import imgSculpture from '../../../assets/makerspace/custom/wood-sculpture.png';
+import imgRelief from '../../../assets/makerspace/custom/wood-cut-relief-map.png';
+
+const items = [
+  { name: "3D Printed Well Screen", image: imgWellScreen },
+  { name: "3D Printed Bookmark", image: imgBookmark },
+  { name: "Sublimated Name Tag", image: imgNameTag },
+  { name: "Acrylic Cut-Outs", image: imgAcrylicCut },
+  { name: "State Cut-Out", image: imgStateCut },
+  { name: "Cut-Outs", image: imgCutOuts },
+  { name: "Multi Color 3D Print", image: imgMultiColor },
+  { name: "Resin 3D Prints", image: imgResin },
+  { name: "Filament 3D Print", image: imgFilament },
+  { name: "Wood Cut Elevation Map", image: imgElevation },
+  { name: "Wood Sculpture", image: imgSculpture },
+  { name: "Wood Cut Relief Map", image: imgRelief }
+];
+---
+
+<Layout title="Custom Awards - APSU GIS Center" description="Unique custom awards from 3D prints to wood carvings.">
+  <section class="bs-container py-24">
+    <div class="max-w-4xl mx-auto mb-16 text-center">
+      <h1 class="bs-h1 mb-6 text-apsu-red">Custom Awards</h1>
+      <p class="bs-body-text text-xl text-bs-foreground-light">
+        Do you need something one of a kind? We offer a range of unique custom awards, from 3D prints to wood carvings. We will work with you to create the perfect award.
+      </p>
+      <p class="mt-4 text-sm text-bs-foreground-dark">* Prices vary based on complexity and materials.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {items.map(item => (
+        <div class="bg-bs-surface-2 p-6 rounded-xl flex flex-col items-center gap-4 hover:bg-bs-surface-3 transition-colors group">
+          <div class="w-full aspect-video bg-white rounded-lg flex items-center justify-center p-2 overflow-hidden">
+             <Image src={item.image} alt={item.name} class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <h3 class="font-bold text-white text-lg">{item.name}</h3>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold mb-4">Looking for Standard Options?</h3>
+      <a href="/services/makerspace/standard-engravables" class="underline text-apsu-red hover:text-white transition-colors">View our Standard Engravables</a>
+    </div>
+  </section>
+</Layout>

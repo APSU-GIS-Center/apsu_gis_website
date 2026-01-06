@@ -1,57 +1,73 @@
 {
-  "title": "blackspike astro landing page",
-  "description": "A free Astro landing theme made with Tailwind",
+  "title": "APSU GIS Center",
+  "description": "We are a mission-driven university entity providing expert geospatial solutions for Public Safety, Facility Resilience, and Economic Development.",
   "social_image": "/1200x630.jpg",
-  "base_url": "https://astro-theme.blackspike.com",
+  "base_url": "https://apsugis.org",
   "demo": {
-    "title": "Need design?",
-    "content": "<strong>Get a guided tour through our services</strong>, and find out how you and your team can change the way you work, forever.",
-    "cta": "Book a call"
+    "title": "Need GIS Services?",
+    "content": "<strong>Partner with us</strong> for expert geospatial analysis, mapping, and data solutions.",
+    "cta": "Contact Us"
   },
-  "theme_color": "#18181b",
+  "theme_color": "#C41E3A",
   "nav": [
     {
       "title": "Services",
-      "link": "/#services"
+      "link": "/#services",
+      "submenu": [
+        {
+          "title": "Public Safety",
+          "link": "/services/public-safety"
+        },
+        {
+          "title": "Economic Development",
+          "link": "/services/economic-development"
+        },
+        {
+          "title": "Campus Mapping",
+          "link": "/services/campus-mapping"
+        },
+        {
+          "title": "—"
+        },
+        {
+          "title": "Standard Engravables",
+          "link": "/services/makerspace/standard-engravables"
+        },
+        {
+          "title": "Custom Awards",
+          "link": "/services/makerspace/custom-awards"
+        }
+      ]
     },
     {
-      "title": "Case studies",
-      "link": "/#case-studies"
+      "title": "News & Impact",
+      "link": "/news-impact"
     },
     {
-      "title": "Pricing",
-      "link": "/#pricing"
+      "title": "Maps & Data",
+      "link": "/maps-data"
     },
     {
-      "title": "FAQ",
-      "link": "/#faq"
+      "title": "Community Snapshot",
+      "link": "/#snapshot"
     },
     {
-      "title": "Newsletter",
-      "link": "/#newsletter"
+      "title": "Impact",
+      "link": "/#impact"
+    },
+    {
+      "title": "Contact",
+      "link": "/contact"
     }
   ],
-
   "social_links": [
     {
-      "title": "Twitter / X",
-      "link": "https://x.com/blackspikeltd/"
-    },
-    {
-      "title": "Mastodon",
-      "link": "https://mastodon.cloud/@blackspike"
-    },
-    {
-      "title": "GitHub",
-      "link": "https://github.com/blackspike/"
+      "title": "Facebook",
+      "link": "https://www.facebook.com/apsugis"
     },
     {
       "title": "LinkedIn",
-      "link": "https://www.linkedin.com/company/blackspike"
-    },
-    {
-      "title": "Bluesky",
-      "link": "https://bsky.app/profile/blackspike.com/"
+      "link": "https://www.linkedin.com/company/apsu-gis-center"
     }
   ]
 }
