@@ -30,7 +30,7 @@ const gallery = [
       </p>
       
       <div class="flex flex-wrap gap-4 justify-center pt-4">
-        <a href="/services" class="bs-btn text-lg bg-apsu-red hover:bg-red-700 text-white border-none shadow-[0_0_20px_rgba(196,30,58,0.4)]">
+        <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services"} class="bs-btn text-lg bg-apsu-red hover:bg-red-700 text-white border-none shadow-[0_0_20px_rgba(196,30,58,0.4)]">
           Explore Services
         </a>
         <a href="#impact" class="bs-btn bs-btn-outline text-lg border-white text-white hover:bg-white hover:text-black">
@@ -75,7 +75,7 @@ const gallery = [
 
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Public Safety -->
-      <a href="/services/public-safety" class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/public-safety"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
         <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           🚒
         </div>
@@ -84,7 +84,7 @@ const gallery = [
       </a>
 
       <!-- Econ Dev -->
-      <a href="/services/economic-development" class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/economic-development"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
         <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           📈
         </div>
@@ -93,7 +93,7 @@ const gallery = [
       </a>
 
       <!-- Campus Map -->
-      <a href="/services/campus-mapping" class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/campus-mapping"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
         <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           🎓
         </div>
@@ -108,7 +108,7 @@ const gallery = [
     <div class="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
     <div class="bs-container relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Ready to leverage the power of GIS?</h2>
-      <a href="/contact" class="inline-flex items-center gap-2 bg-white text-apsu-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-xl">
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/contact"} class="inline-flex items-center gap-2 bg-white text-apsu-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-xl">
         Start Your Project
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
