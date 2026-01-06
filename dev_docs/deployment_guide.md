@@ -30,7 +30,8 @@ Deployment is **automatic**.
 
 ## 5. Troubleshooting
 *   **404 on Assets:** If images or styles are missing, check `astro.config.mjs`. You may need to set the `base` path if you are not using a custom domain.
-    *   *Example:* If your repo is `apsu-gis-website`, set `base: '/apsu-gis-website'` in `astro.config.mjs`.
+    *   **Current Config:** `base: '/apsu_gis_website'` (configured for `apsu-gis-center.github.io/apsu_gis_website`).
+    *   **Custom Domain:** If you switch to `apsugis.org`, set `base: '/'`.
 *   **Build Failures:** Check the **Actions** logs. Common errors include missing dependencies (run `npm install`) or type errors in `.astro` files.
 
 ## 6. Custom Domain (Optional)
