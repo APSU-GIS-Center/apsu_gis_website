@@ -18,8 +18,8 @@ You must explicitly enable GitHub Pages to serve from the Actions workflow.
 2.  Click on the **Settings** tab.
 3.  In the left sidebar, click on **Pages**.
 4.  Under **Build and deployment**:
-    *   **Source:** Select **GitHub Actions** from the dropdown.
-    *   (Do NOT select "Deploy from a branch").
+    *   **Source:** You MUST select **GitHub Actions** from the dropdown menu.
+    *   *Note:* If it is set to "Deploy from a branch", the action will fail with a 404 error.
 5.  There is no need to configure a custom domain immediately; it will default to `https://[username].github.io/[repo-name]/`.
 
 ## 4. Triggering a Deployment
