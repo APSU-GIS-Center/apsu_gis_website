@@ -6,9 +6,16 @@ import "../assets/css/typography.css"
 import "../assets/css/layout.css"
 import "../assets/css/buttons.css"
 
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/600.css';
+import '@fontsource/montserrat/700.css';
+import '@fontsource/libre-baskerville/400.css';
+import '@fontsource/libre-baskerville/700.css';
+import '@fontsource/libre-baskerville/400-italic.css';
 
 
-import Image from "astro/components/Image.astro"
+
+import { Image } from 'astro:assets';
 import bg_image from "../assets/theme-images/hero-topographic.png"
 
 import global_settings from "../data/global_settings.json"
@@ -30,8 +37,8 @@ const { title, description } = Astro.props
 
     <title>{ title ?? global_settings.title }</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/favicon.svg"} />
+    <link rel="manifest" href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/manifest.json"} />
 
     <meta name="description" content={ description ?? global_settings.description } />
     <meta name="theme-color" content={ global_settings.theme_color } />
@@ -43,9 +50,7 @@ const { title, description } = Astro.props
       content={ global_settings.base_url + global_settings.social_image }
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
   </head>
 

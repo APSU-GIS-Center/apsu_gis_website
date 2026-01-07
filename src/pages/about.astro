@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import imgCampus from '../assets/images/campus-aerial.jpg';
+---
+
+<Layout title="About Us | APSU GIS Center" description="We bridge the gap between academic innovation and municipal needs.">
+  <div class="bs-container py-32 max-w-4xl">
+    <h1 class="bs-h1 mb-8">The University Geospatial Advantage</h1>
+    
+    <div class="prose prose-invert prose-lg max-w-none">
+      <p class="lead text-2xl mb-8 font-light text-bs-foreground-light">
+        We aren't just a vendor; we are a strategic partner. As a unit of Austin Peay State University, we operate with a mission of public service, not profit.
+      </p>
+
+      <Image src={imgCampus} alt="Austin Peay Campus" class="w-full rounded-2xl mb-12 shadow-2xl" />
+
+      <h2 class="text-3xl font-bold text-white mb-6">Our Mission</h2>
+      <p class="mb-6">
+        Our "University Advantage" model pairs expert staff with student innovators to deliver professional-grade solutions that maximize your budget while training the next generation of the regional workforce.
+      </p>
+      
+      <div class="bg-bs-surface-2 p-8 rounded-xl border-l-4 border-apsu-red my-12">
+        <h3 class="text-xl font-bold text-white mb-2">Serving the region for over 23 years</h3>
+        <p class="m-0 text-bs-foreground-light">
+          From the 1999 Tornado response to modern Digital Twins, we have been a fixture in the Clarksville-Montgomery County region's resilience and growth.
+        </p>
+      </div>
+
+      <h2 class="text-3xl font-bold text-white mb-6">Staff & Leadership</h2>
+      <p>
+        The Center is led by experienced professionals who oversee a dedicated team of student researchers and developers. This structure ensures commercial-grade quality assurance while providing students with invaluable real-world experience.
+      </p>
+    </div>
+  </div>
+</Layout>

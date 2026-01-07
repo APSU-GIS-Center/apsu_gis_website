@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// In a real implementation, we would import from a data file or collection
+// import projects from '../data/case_studies.json'; 
+
+// Placeholder data for now based on the prompt
+const projects = [
+  {
+    title: "1999 Tornado Response",
+    category: "Disaster Resilience",
+    desc: "Rapid response mapping that set the standard for modern disaster GIS.",
+    image: null
+  },
+  {
+    title: "Wetlands Project",
+    category: "Environmental",
+    desc: "Mapping and analysis of critical wetland ecosystems.",
+    image: null
+  },
+  {
+    title: "Montgomery County Near Me",
+    category: "App Development",
+    desc: "Mobile application connecting citizens to local services.",
+    image: null
+  },
+  {
+    title: "Campus Digital Twin",
+    category: "3D Modeling",
+    desc: "High-fidelity Matterport scans of university facilities.",
+    image: null
+  }
+];
+---
+
+<Layout title="Project Portfolio | APSU GIS Center" description="See our work in action. Real-world solutions for real-world problems.">
+  <div class="bs-container py-32">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="bs-h1 mb-6">Our Work</h1>
+      <p class="text-xl text-bs-foreground-light">
+        Explore how we apply geospatial technology to solve complex problems for our partners.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <article class="bg-bs-surface-2 rounded-xl overflow-hidden border border-bs-surface-3 hover:border-apsu-red/50 transition-colors group">
+          <div class="aspect-video bg-bs-surface-3 flex items-center justify-center text-bs-foreground-dark">
+            {project.image ? (
+               <Image src={project.image} alt={project.title} class="w-full h-full object-cover" />
+            ) : (
+               <span>Image Placeholder</span>
+            )}
+          </div>
+          <div class="p-8">
+            <span class="text-apsu-red text-sm font-bold tracking-wider uppercase mb-2 block">{project.category}</span>
+            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-apsu-red transition-colors">{project.title}</h2>
+            <p class="text-bs-foreground-light mb-6">
+              {project.desc}
+            </p>
+            <a href="#" class="inline-flex items-center text-white font-semibold hover:text-apsu-red transition-colors">
+              Read Case Study →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>

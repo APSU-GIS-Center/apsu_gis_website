@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import imgCampus from '../../assets/images/campus-aerial.jpg';
 ---
 
 <Layout title="Campus Mapping - APSU GIS Center" description="Comprehensive mapping services for the Austin Peay State University campus.">
@@ -9,6 +11,10 @@ import Layout from '../../layouts/Layout.astro';
       <p class="bs-body-text text-xl mb-12">
         The authoritative source for spatial data regarding APSU's physical campus environment.
       </p>
+
+      <div class="mb-12 rounded-xl overflow-hidden shadow-xl">
+        <Image src={imgCampus} alt="Aerial view of APSU Campus" class="w-full h-auto object-cover" />
+      </div>
 
       <div class="grid gap-8">
         <div class="bg-bs-surface-2 p-8 rounded-xl border-l-4 border-apsu-red">

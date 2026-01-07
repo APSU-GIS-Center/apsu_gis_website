@@ -1,43 +1,51 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import imgDrone from '../assets/images/drone-stadium.jpg';
+import imgVR from '../assets/images/students-vr.jpg';
+import imgScan from '../assets/images/3d-scanning.jpg';
 
 const articles = [
   {
     title: "Response to Waverly Floods",
     category: "Crisis Response",
     description: "Deployed rapid mapping teams to Humphreys County to assist emergency ops and assess damage after historic flooding.",
-    icon: "🌊"
+    image: imgDrone,
+    alt: "Drone survey of flood damage"
   },
   {
     title: "COVID-19 PPE Initiative",
     category: "Community Service",
     description: "Led a statewide effort to 3D-print and distribute thousands of face shields to frontline medical workers during the pandemic.",
+    image: null, // Keeping icon for this one as we don't have a specific PPE image in the list, or we could use generic if available. Let's stick to icon if no image.
     icon: "🛡️"
   },
   {
     title: "Habitat for Humanity Virtual Tours",
     category: "Innovation",
     description: "Partnered with Habitat for Humanity to create immersive 3D virtual tours of home designs for prospective homeowners.",
-    icon: "🏠"
+    image: imgVR,
+    alt: "Students using VR headsets"
   },
   {
     title: "Vanderbilt LiDAR Traffic Study",
     category: "Research",
     description: "Collaborated with Vanderbilt University researchers using LiDAR to analyze traffic patterns and improve pedestrian safety.",
-    icon: "🚦"
+    image: imgScan,
+    alt: "3D LiDAR point cloud scan"
   }
 ];
 
 const awards = [
   {
     title: "Special Achievement in GIS",
-    org: "ESRI International",
-    description: "Recognized for outstanding vision, leadership, and innovative use of ESRI's geographic information system technology."
+    org: "Esri",
+    description: "Recognized for outstanding work in the GIS field."
   },
   {
-    title: "Academic Excellence & Quality Award",
-    org: "Tennessee Board of Regents",
-    description: "Honored for demonstrating excellence in academic programming and service to the region."
+    title: "Community Service Award",
+    org: "Clarksville Chamber of Commerce",
+    description: "For dedication to public safety and disaster response."
   }
 ];
 ---
@@ -55,17 +63,28 @@ const awards = [
     <h2 class="bs-h2 mb-8 text-center">Featured Stories</h2>
     <div class="grid md:grid-cols-2 gap-8 mb-24">
       {articles.map(article => (
-        <article class="bg-bs-surface-2 p-8 rounded-xl hover:bg-bs-surface-3 transition-colors">
-          <div class="flex items-center gap-4 mb-4">
-            <span class="text-4xl">{article.icon}</span>
-            <div>
-              <span class="text-apsu-red text-sm font-bold uppercase tracking-wider">{article.category}</span>
-              <h3 class="text-2xl font-bold text-white leading-tight">{article.title}</h3>
+        <article class="bg-bs-surface-2 rounded-xl hover:bg-bs-surface-3 transition-colors overflow-hidden group">
+          {article.image ? (
+            <div class="h-48 overflow-hidden relative">
+              <Image src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-bs-surface-2 to-transparent opacity-60"></div>
             </div>
+          ) : (
+            <div class="h-6 bg-apsu-red/5"></div> /* Spacer if no image */
+          )}
+          
+          <div class="p-8 relative">
+             {/* Icon float if no image, or badge if image? Let's genericize */}
+             {!article.image && <div class="text-4xl mb-4">{article.icon}</div>}
+             
+            <div class="mb-2">
+              <span class="text-apsu-red text-sm font-bold uppercase tracking-wider">{article.category}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white leading-tight mb-4">{article.title}</h3>
+            <p class="text-bs-foreground-light leading-relaxed">
+              {article.description}
+            </p>
           </div>
-          <p class="text-bs-foreground-light leading-relaxed">
-            {article.description}
-          </p>
         </article>
       ))}
     </div>

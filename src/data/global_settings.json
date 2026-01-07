@@ -11,20 +11,28 @@
   "theme_color": "#C41E3A",
   "nav": [
     {
+      "title": "About",
+      "link": "/about"
+    },
+    {
       "title": "Services",
-      "link": "/#services",
+      "link": "/services",
       "submenu": [
         {
           "title": "Public Safety",
-          "link": "/services/public-safety"
+          "link": "/services#public-safety"
         },
         {
           "title": "Economic Development",
-          "link": "/services/economic-development"
+          "link": "/services#economic-development"
+        },
+        {
+          "title": "Municipal Solutions",
+          "link": "/services#municipal-solutions"
         },
         {
           "title": "Campus Mapping",
-          "link": "/services/campus-mapping"
+          "link": "/services#campus-mapping"
         },
         {
           "title": "—"
@@ -40,20 +48,16 @@
       ]
     },
     {
+      "title": "Portfolio",
+      "link": "/portfolio"
+    },
+    {
       "title": "News & Impact",
       "link": "/news-impact"
     },
     {
       "title": "Maps & Data",
       "link": "/maps-data"
-    },
-    {
-      "title": "Community Snapshot",
-      "link": "/#snapshot"
-    },
-    {
-      "title": "Impact",
-      "link": "/#impact"
     },
     {
       "title": "Contact",
