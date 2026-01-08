@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Dashboard from '../components/Dashboard.astro';
 import ImpactMetrics from '../components/ImpactMetrics.astro';
 import { Image } from 'astro:assets';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import DonationButton from '../components/DonationButton.astro';
 
 import imgDrone from '../assets/images/drone-stadium.jpg';
 import imgCampus from '../assets/images/campus-aerial.jpg';
@@ -121,7 +124,7 @@ const gallery = [
 
   <!-- CTA -->
   <section class="py-32 bg-apsu-red text-white text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
+
     <div class="bs-container relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Ready to leverage the power of GIS?</h2>
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/contact"} class="inline-flex items-center gap-2 bg-white text-apsu-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-xl">
@@ -130,4 +133,9 @@ const gallery = [
       </a>
     </div>
   </section>
+
+<!-- Revenue focused components -->
+<TestimonialsCarousel />
+<NewsletterSignup />
+<DonationButton />
 </Layout>

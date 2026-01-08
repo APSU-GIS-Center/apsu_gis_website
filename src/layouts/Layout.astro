@@ -42,6 +42,22 @@ const { title, description } = Astro.props
 
     <meta name="description" content={ description ?? global_settings.description } />
     <meta name="theme-color" content={ global_settings.theme_color } />
+<meta name="keywords" content={ global_settings.keywords } />
+<link rel="canonical" href={ global_settings.canonical_url } />
+<meta property="og:url" content={ global_settings.canonical_url } />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={ title ?? global_settings.title } />
+<meta name="twitter:description" content={ description ?? global_settings.description } />
+<meta name="twitter:image" content={ global_settings.base_url + global_settings.social_image } />
+<script type="application/ld+json">
+{`{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "${global_settings.canonical_url}",
+  "logo": "${global_settings.base_url}/logo.png",
+  "sameAs": ${JSON.stringify(global_settings.social_links.map(l => l.link))}
+}`}
+</script>
 
     <meta property="og:title" content={ title ?? global_settings.title } />
     <meta property="og:description" content={ description ?? global_settings.description } />
