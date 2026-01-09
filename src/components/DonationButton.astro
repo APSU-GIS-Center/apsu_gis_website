@@ -1,15 +1,19 @@
 ---
 ---
 <!-- src/components/DonationButton.astro -->
-<script lang="ts">
-  const handleDonate = () => {
-    // In a real app, redirect to a payment provider or donation form
-    alert('Thank you for your interest in supporting APSU GIS Center!');
-  };
-</script>
+<div id="donation-button" class="w-full flex justify-center py-4">
+  <button class="bs-btn bg-apsu-red hover:bg-red-700 text-white" type="button">
+    Donate / Support Us
+  </button>
+</div>
 
-<button on:click={handleDonate} class="bs-btn bg-apsu-red hover:bg-red-700 text-white">
-  Donate / Support Us
-</button>
----
----
+<script type="module">
+  const root = document.getElementById('donation-button');
+  if (root) {
+    const btn = root.querySelector('button');
+    btn && btn.addEventListener('click', () => {
+      // In a real app, redirect to a payment provider or donation form
+      alert('Thank you for your interest in supporting APSU GIS Center!');
+    });
+  }
+</script>

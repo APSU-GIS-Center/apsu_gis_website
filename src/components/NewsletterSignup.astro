@@ -1,25 +1,29 @@
 ---
 ---
 <!-- src/components/NewsletterSignup.astro -->
-<script lang="ts">
-  // Placeholder handler – in production replace with real endpoint
-  const handleSubmit = (event: Event) => {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    // Simple client‑side feedback
-    alert(`Thanks for signing up, ${email}!`);
-    form.reset();
-  };
-</script>
-
-<div class="max-w-xl mx-auto py-12 text-center">
+<div id="newsletter-signup" class="max-w-xl mx-auto py-12 text-center flex flex-col items-center">
   <h2 class="text-3xl font-bold mb-4 text-white">Stay Updated</h2>
   <p class="mb-6 text-gray-200">Subscribe to our newsletter for GIS insights and project updates.</p>
-  <form on:submit={handleSubmit} class="flex flex-col sm:flex-row items-center justify-center gap-2">
-    <input type="email" name="email" placeholder="Your email" required class="px-4 py-2 rounded w-full sm:w-auto" />
+  <form class="flex flex-col sm:flex-row items-center justify-center gap-2 w-full sm:w-auto">
+    <input type="email" name="email" placeholder="Your email" required class="px-4 py-2 rounded w-full sm:w-64" />
     <button type="submit" class="bs-btn bg-apsu-red hover:bg-red-700 text-white">Subscribe</button>
   </form>
 </div>
----
----
+
+<script type="module">
+  // Module-scoped handler: no globals.
+  const root = document.getElementById('newsletter-signup');
+  if (root) {
+    const form = root.querySelector('form');
+    form && form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const emailInput = form.elements && form.elements.namedItem
+        ? form.elements.namedItem('email')
+        : form['email'];
+      const email = emailInput ? emailInput.value : '';
+      // Simple client-side feedback
+      alert(`Thanks for signing up, ${email}!`);
+      form.reset();
+    });
+  }
+</script>
