@@ -1,13 +1,12 @@
 ---
 ---
 <!-- src/components/NewsletterSignup.astro -->
-
-<div class="max-w-xl mx-auto py-12 text-center">
+<div id="newsletter-signup" class="max-w-xl mx-auto py-12 text-center flex flex-col items-center">
   <h2 class="text-3xl font-bold mb-4 text-white">Stay Updated</h2>
   <p class="mb-6 text-gray-200">Subscribe to our newsletter for GIS insights and project updates.</p>
-  <form id="newsletter-form" class="flex flex-col sm:flex-row items-center justify-center gap-2">
+  <form id="newsletter-form" class="flex flex-col sm:flex-row items-center justify-center gap-2 w-full sm:w-auto">
     <label for="newsletter-email" class="sr-only">Email address</label>
-    <input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="Your email" required class="px-4 py-2 rounded w-full sm:w-auto" />
+    <input id="newsletter-email" type="email" name="email" autocomplete="email" placeholder="Your email" required class="px-4 py-2 rounded w-full sm:w-64" />
     <button type="submit" class="bs-btn bg-apsu-red hover:bg-red-700 text-white">Subscribe</button>
   </form>
 </div>

@@ -1,6 +1,8 @@
 ---
 
 import Logo from '../assets/theme-images/logo.svg'
+// Import the unit identifier as a bundler-handled URL so the dev server serves it correctly
+import UnitLogoUrl from '../assets/images/APSU-Logo-GIS-Horizontal.png?url'
 
 const { settings } = Astro.props
 
@@ -13,10 +15,9 @@ const { settings } = Astro.props
   <div class="bs-container py-6 flex justify-between items-center">
 
     <!-- Logo -->
-    <a class="flex xl:min-w-32 group" href={import.meta.env.BASE_URL} aria-label={ settings.title + ' - Home' }>
-
-      <Logo class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000" height="48" width="48" />
-
+    <a class="flex xl:min-w-32 group items-center" href={import.meta.env.BASE_URL} aria-label={ settings.title + ' - Home' }>
+      <!-- Unit identifier PNG displayed in white using CSS filter -->
+  <img src={UnitLogoUrl} alt={settings.title + ' logo'} class="h-12 object-contain filter brightness-0 invert" />
     </a>
 
     <!-- Nav -->

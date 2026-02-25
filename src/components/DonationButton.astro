@@ -1,17 +1,17 @@
 ---
 ---
 <!-- src/components/DonationButton.astro -->
-<button id="donation-button" class="bs-btn bg-apsu-red hover:bg-red-700 text-white">
-  Donate / Support Us
-</button>
----
----
+<div id="donation-button" class="w-full flex justify-center py-4">
+  <button class="bs-btn bg-apsu-red hover:bg-red-700 text-white" type="button">
+    Donate / Support Us
+  </button>
+</div>
 
 <script is:inline>
-  const donationButton = document.getElementById('donation-button');
-
-  if (donationButton) {
-    donationButton.addEventListener('click', () => {
+  const root = document.getElementById('donation-button');
+  if (root) {
+    const btn = root.querySelector('button');
+    btn && btn.addEventListener('click', () => {
       alert('Thank you for your interest in supporting APSU GIS Center!');
     });
   }
