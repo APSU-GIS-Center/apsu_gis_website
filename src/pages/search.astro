@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Search | APSU GIS Center" description="Search APSU GIS Center pages, projects, services, and news.">
+  <section class="bs-container py-24">
+    <div class="max-w-4xl mx-auto">
+      <header class="text-center mb-10">
+        <h1 class="bs-h1 mb-4">Search</h1>
+        <p class="bs-body-text text-bs-foreground-light">
+          Find services, project work, maps, and news across the APSU GIS Center website.
+        </p>
+      </header>
+
+      <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-6 md:p-8">
+        <div id="search-ui" class="min-h-24"></div>
+        <p id="search-fallback" class="hidden text-sm text-bs-foreground-light mt-4">
+          Search index is not available in development mode. Build the site and use preview to test search.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const pagefindStylesheet = document.createElement('link');
+        pagefindStylesheet.rel = 'stylesheet';
+        pagefindStylesheet.href = '/pagefind/pagefind-ui.css';
+        document.head.appendChild(pagefindStylesheet);
+
+        const { PagefindUI } = await import('/pagefind/pagefind-ui.js');
+        new PagefindUI({
+          element: '#search-ui',
+          showSubResults: true,
+          resetStyles: false,
+          translations: {
+            placeholder: 'Search pages, projects, and stories...'
+          }
+        });
+      } catch {
+        const fallback = document.getElementById('search-fallback');
+        if (fallback) fallback.classList.remove('hidden');
+      }
+    });
+  </script>
+</Layout>

@@ -6,18 +6,29 @@ import { Image } from 'astro:assets';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import DonationButton from '../components/DonationButton.astro';
+import portfolioProjects from '../data/sections/portfolio_projects.json';
+import newsImpactStories from '../data/sections/news_impact_stories.json';
 
-import imgDrone from '../assets/images/drone-stadium.jpg';
 import imgCampus from '../assets/images/campus-aerial.jpg';
-import imgVR from '../assets/images/students-vr.jpg';
-import imgScan from '../assets/images/3d-scanning.jpg';
 
-const gallery = [
-  { img: imgDrone, title: "Aerial Drone Mapping", desc: "High-resolution orthomosaics and surveying." },
-  { img: imgVR, title: "Immersive VR Lab", desc: "Cutting-edge virtual reality simulation and training." },
-  { img: imgCampus, title: "Campus Intelligence", desc: "Detailed mapping for facilities and safety." },
-  { img: imgScan, title: "3D LiDAR Scanning", desc: "Digital twinning for historic preservation." },
+const portfolioPreview = [
+  portfolioProjects.current[0],
+  portfolioProjects.past[0],
+  portfolioProjects.current[1],
+  portfolioProjects.past[1]
 ];
+
+const storiesSortedByDate = [...newsImpactStories].sort((a, b) => {
+  const dateA = a.date || '';
+  const dateB = b.date || '';
+  return dateB.localeCompare(dateA);
+});
+
+const newsPreview = [
+  storiesSortedByDate[0],
+  storiesSortedByDate[storiesSortedByDate.length - 1],
+  storiesSortedByDate[1]
+].filter(Boolean);
 ---
 
 <Layout title="APSU GIS Center | Grant-Ready GIS for Tennessee & Southern Kentucky" description="University-powered GIS services helping local governments and public safety teams in Tennessee and Southern Kentucky win grants, improve readiness, and accelerate economic development.">
@@ -63,20 +74,58 @@ const gallery = [
       <p class="bs-body-text max-w-2xl mx-auto">See how APSU teams deliver decision-ready mapping, analytics, and digital workflows for public-sector partners.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-      {gallery.map(item => (
-        <div class="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer">
-          <Image src={item.img} alt={item.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+      {portfolioPreview.map((project) => (
+        <a href={project.url} target="_blank" rel="noopener noreferrer" class="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer">
+          <img src={project.image} alt={project.title} class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
           <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
-            <h3 class="text-xl font-bold text-white mb-1">{item.title}</h3>
-            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity delay-100">{item.desc}</p>
+            <h3 class="text-xl font-bold text-white mb-1">{project.title}</h3>
+            <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity delay-100">View live project details</p>
           </div>
-        </div>
+        </a>
       ))}
     </div>
     <div class="text-center">
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/portfolio"} class="bs-btn bs-btn-outline border-apsu-red text-apsu-red hover:bg-apsu-red hover:text-white">
         View Full Portfolio
+      </a>
+    </div>
+  </section>
+
+  <!-- In the News Preview -->
+  <section class="bs-container py-24">
+    <div class="text-center mb-12">
+      <h2 class="bs-h2 mb-4">In the News</h2>
+      <p class="bs-body-text max-w-2xl mx-auto">Recent media coverage highlighting APSU GIS Center work across public safety, infrastructure, and innovation.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {newsPreview.map((story) => (
+        <article class="bg-bs-surface-2 rounded-xl overflow-hidden border border-bs-surface-3 hover:border-apsu-red/50 transition-colors group">
+          <div class="aspect-[3/2] bg-bs-surface-3">
+            <img
+              src={story.image}
+              alt={story.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <div class="p-6">
+            <p class="text-xs uppercase tracking-wider text-apsu-red font-semibold mb-2">{story.source}</p>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-apsu-red transition-colors">{story.title}</h3>
+            <a href={story.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-white font-semibold hover:text-apsu-red transition-colors">
+              Read Story →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/news-impact"} class="bs-btn bs-btn-outline border-apsu-red text-apsu-red hover:bg-apsu-red hover:text-white">
+        View All News & Impact
       </a>
     </div>
   </section>

@@ -60,6 +60,10 @@
       "link": "/maps-data"
     },
     {
+      "title": "Search",
+      "link": "/search"
+    },
+    {
       "title": "Contact",
       "link": "/contact"
     }

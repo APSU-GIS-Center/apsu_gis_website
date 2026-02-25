@@ -1,37 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import portfolioProjects from '../data/sections/portfolio_projects.json';
 
-// In a real implementation, we would import from a data file or collection
-// import projects from '../data/case_studies.json'; 
-
-// Placeholder data for now based on the prompt
-const projects = [
-  {
-    title: "1999 Tornado Response",
-    category: "Disaster Resilience",
-    desc: "Rapid response mapping that set the standard for modern disaster GIS.",
-    image: null
-  },
-  {
-    title: "Wetlands Project",
-    category: "Environmental",
-    desc: "Mapping and analysis of critical wetland ecosystems.",
-    image: null
-  },
-  {
-    title: "Montgomery County Near Me",
-    category: "App Development",
-    desc: "Mobile application connecting citizens to local services.",
-    image: null
-  },
-  {
-    title: "Campus Digital Twin",
-    category: "3D Modeling",
-    desc: "High-fidelity Matterport scans of university facilities.",
-    image: null
-  }
-];
+const { current, past } = portfolioProjects;
 ---
 
 <Layout title="Project Portfolio | APSU GIS Center" description="See our work in action. Real-world solutions for real-world problems.">
@@ -43,28 +14,68 @@ const projects = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map(project => (
-        <article class="bg-bs-surface-2 rounded-xl overflow-hidden border border-bs-surface-3 hover:border-apsu-red/50 transition-colors group">
-          <div class="aspect-video bg-bs-surface-3 flex items-center justify-center text-bs-foreground-dark">
-            {project.image ? (
-               <Image src={project.image} alt={project.title} class="w-full h-full object-cover" />
-            ) : (
-               <span>Image Placeholder</span>
-            )}
-          </div>
-          <div class="p-8">
-            <span class="text-apsu-red text-sm font-bold tracking-wider uppercase mb-2 block">{project.category}</span>
-            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-apsu-red transition-colors">{project.title}</h2>
-            <p class="text-bs-foreground-light mb-6">
-              {project.desc}
-            </p>
-            <a href="#" class="inline-flex items-center text-white font-semibold hover:text-apsu-red transition-colors">
-              Read Case Study →
-            </a>
-          </div>
-        </article>
-      ))}
-    </div>
+    <section class="mb-16">
+      <h2 class="bs-h2 mb-8">Current Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {current.map((project) => (
+          <article class="bg-bs-surface-2 rounded-xl overflow-hidden border border-bs-surface-3 hover:border-apsu-red/50 transition-colors group">
+            <div class="aspect-video bg-bs-surface-3">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-apsu-red text-sm font-bold tracking-wider uppercase mb-2 block">Current Project</span>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-apsu-red transition-colors">{project.title}</h3>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-white font-semibold hover:text-apsu-red transition-colors"
+              >
+                View Project →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="bs-h2 mb-8">Past Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {past.map((project) => (
+          <article class="bg-bs-surface-2 rounded-xl overflow-hidden border border-bs-surface-3 hover:border-apsu-red/50 transition-colors group">
+            <div class="aspect-video bg-bs-surface-3">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-apsu-red text-sm font-bold tracking-wider uppercase mb-2 block">Past Project</span>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-apsu-red transition-colors">{project.title}</h3>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-white font-semibold hover:text-apsu-red transition-colors"
+              >
+                View Project →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   </div>
 </Layout>

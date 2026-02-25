@@ -1,40 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import imgDrone from '../assets/images/drone-stadium.jpg';
-import imgVR from '../assets/images/students-vr.jpg';
-import imgScan from '../assets/images/3d-scanning.jpg';
-
-const articles = [
-  {
-    title: "Response to Waverly Floods",
-    category: "Crisis Response",
-    description: "Deployed rapid mapping teams to Humphreys County to assist emergency ops and assess damage after historic flooding.",
-    image: imgDrone,
-    alt: "Drone survey of flood damage"
-  },
-  {
-    title: "COVID-19 PPE Initiative",
-    category: "Community Service",
-    description: "Led a statewide effort to 3D-print and distribute thousands of face shields to frontline medical workers during the pandemic.",
-    image: null, // Keeping icon for this one as we don't have a specific PPE image in the list, or we could use generic if available. Let's stick to icon if no image.
-    icon: "🛡️"
-  },
-  {
-    title: "Habitat for Humanity Virtual Tours",
-    category: "Innovation",
-    description: "Partnered with Habitat for Humanity to create immersive 3D virtual tours of home designs for prospective homeowners.",
-    image: imgVR,
-    alt: "Students using VR headsets"
-  },
-  {
-    title: "Vanderbilt LiDAR Traffic Study",
-    category: "Research",
-    description: "Collaborated with Vanderbilt University researchers using LiDAR to analyze traffic patterns and improve pedestrian safety.",
-    image: imgScan,
-    alt: "3D LiDAR point cloud scan"
-  }
-];
+import stories from '../data/sections/news_impact_stories.json';
 
 const awards = [
   {
@@ -62,28 +28,32 @@ const awards = [
     <!-- Featured Stories -->
     <h2 class="bs-h2 mb-8 text-center">Featured Stories</h2>
     <div class="grid md:grid-cols-2 gap-8 mb-24">
-      {articles.map(article => (
+      {stories.map((story) => (
         <article class="bg-bs-surface-2 rounded-xl hover:bg-bs-surface-3 transition-colors overflow-hidden group">
-          {article.image ? (
-            <div class="h-48 overflow-hidden relative">
-              <Image src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div class="absolute inset-0 bg-gradient-to-t from-bs-surface-2 to-transparent opacity-60"></div>
-            </div>
-          ) : (
-            <div class="h-6 bg-apsu-red/5"></div> /* Spacer if no image */
-          )}
+          <div class="h-48 overflow-hidden relative">
+            <img
+              src={story.image}
+              alt={story.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-bs-surface-2 to-transparent opacity-60"></div>
+          </div>
           
           <div class="p-8 relative">
-             {/* Icon float if no image, or badge if image? Let's genericize */}
-             {!article.image && <div aria-hidden="true" class="text-4xl mb-4">{article.icon}</div>}
-             
             <div class="mb-2">
-              <span class="inline-flex items-center rounded-full bg-apsu-red px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{article.category}</span>
+              <span class="inline-flex items-center rounded-full bg-apsu-red px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{story.source}</span>
             </div>
-            <h3 class="text-2xl font-bold text-white leading-tight mb-4">{article.title}</h3>
+            <h3 class="text-2xl font-bold text-white leading-tight mb-3">{story.title}</h3>
+            {story.date && <p class="text-sm text-bs-foreground-light mb-4">{story.date}</p>}
             <p class="text-bs-foreground-light leading-relaxed">
-              {article.description}
+              {story.summary}
             </p>
+            <a href={story.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-6 text-white font-semibold hover:text-apsu-red transition-colors">
+              Read Story →
+            </a>
           </div>
         </article>
       ))}
