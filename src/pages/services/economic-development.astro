@@ -1,39 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const economicOfferings = [
+  {
+    title: 'Site Selection Analysis',
+    description: 'Evaluate target parcels using infrastructure access, demographics, and growth indicators.',
+  },
+  {
+    title: 'Workforce Demographics',
+    description: 'Provide labor pool, commuting, and skills profile data for recruitment and expansion decisions.',
+  },
+  {
+    title: 'Grant Support Analytics',
+    description: 'Deliver maps and data evidence for competitive grant narratives and reporting requirements.',
+  },
+  {
+    title: 'Community Snapshot Dashboards',
+    description: 'Package key economic indicators into stakeholder-ready visuals for leadership and investors.',
+  },
+];
 ---
 
-<Layout title="Economic Development - APSU GIS Center" description="Data analysis and mapping for regional economic growth and workforce development.">
+<Layout title="Economic Development GIS Services | Site Selection & Workforce Analytics | APSU GIS Center" description="Strengthen site selection, workforce analysis, and grant competitiveness with market-ready GIS insights. Request an Economic Development consultation.">
   <section class="bs-container py-24">
     <div class="max-w-4xl mx-auto">
       <h1 class="bs-h1 mb-6 text-apsu-red">Economic Development</h1>
       <p class="bs-body-text text-xl mb-12">
-        Empowering decision-makers with demographic insights and site selection tools to drive regional growth.
+        Market-focused analytics and mapping products that help communities attract investment and compete for funding.
       </p>
 
-      <div class="space-y-12">
-        <div class="bg-bs-surface-2 p-8 rounded-xl flex flex-col md:flex-row gap-8 items-center">
-            <div class="flex-1">
-                <h2 class="bs-h3 mb-4">Site Selection & Analysis</h2>
-                <p class="mb-4 text-bs-foreground-dark">
-                    We provide detailed site suitability analysis for businesses looking to relocate or expand in the region.
-                </p>
-            </div>
-            <div class="w-full md:w-1/3 aspect-square bg-bs-surface-3 rounded-lg flex items-center justify-center text-5xl">
-                🏗️
-            </div>
-        </div>
+      <h2 class="bs-h3 mb-6">Marketable Service Offerings</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {economicOfferings.map((offering) => (
+          <article class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3">
+            <h3 class="text-2xl font-bold text-white mb-3">{offering.title}</h3>
+            <p class="text-bs-foreground-light">{offering.description}</p>
+          </article>
+        ))}
+      </div>
 
-        <div class="bg-bs-surface-2 p-8 rounded-xl flex flex-col md:flex-row-reverse gap-8 items-center">
-            <div class="flex-1">
-                <h2 class="bs-h3 mb-4">Workforce Data</h2>
-                <p class="mb-4 text-bs-foreground-dark">
-                    Analyzing labor market trends and commuting patterns to support workforce development initiatives.
-                </p>
-            </div>
-            <div class="w-full md:w-1/3 aspect-square bg-bs-surface-3 rounded-lg flex items-center justify-center text-5xl">
-                💼
-            </div>
-        </div>
+      <div class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3 mb-12">
+        <h2 class="bs-h3 mb-4">Decision-Maker Outcomes</h2>
+        <ul class="space-y-3 text-bs-foreground-light">
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Stronger prospect packages for business recruitment teams.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Faster site comparison workflows for staff and partners.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Grant proposals supported by verifiable local data and maps.</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-8 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Build your economic intelligence package</h2>
+        <p class="text-bs-foreground-light mb-6">
+          Get a tailored plan for site selection, workforce analytics, and stakeholder-ready dashboards.
+        </p>
+        <a href={baseUrl + '/contact'} class="bs-btn bg-apsu-red hover:bg-red-700 text-white border-none">
+          Request an Economic Development Consultation
+        </a>
       </div>
     </div>
   </section>

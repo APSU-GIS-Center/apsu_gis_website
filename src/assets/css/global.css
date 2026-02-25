@@ -25,3 +25,8 @@
       1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%,
       0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
 }
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-apsu-red);
+  outline-offset: 2px;
+}

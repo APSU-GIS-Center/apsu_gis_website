@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Public Safety Mapping<br>for Operational Readiness",
+    "content": "<strong>Support emergency managers and response teams with usable geospatial intelligence.</strong> We scope and deliver incident pre-plan layers, rapid assessment workflows, and response-support products aligned to real operational constraints.",
+    "cta": "Request Public Safety Scope",
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "image_alt": "Public safety geospatial planning session"
+  },
+  {
+    "title": "Infrastructure Resilience<br>and Asset Intelligence",
+    "content": "<strong>Turn existing data layers into planning-grade infrastructure insight.</strong> We help agencies build asset inventories, risk overlays, and executive-facing map products that improve capital planning and continuity decisions.",
+    "cta": "Plan Resilience Deliverables",
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "image_alt": "Infrastructure and asset analytics dashboard"
+  },
+  {
+    "title": "Economic Development<br>Site and Workforce Analytics",
+    "content": "<strong>Equip economic development leaders with defensible location intelligence.</strong> We package site, workforce, and demographic indicators into map products and dashboards for recruitment, stakeholder briefings, and proposal support.",
+    "cta": "Build Economic Intelligence Package",
+    "image": "/content-images/blackspike-wallpaper-03.avif",
+    "image_alt": "Economic development analytics briefing"
+  },
+  {
+    "title": "Grant Support Mapping<br>and Reporting Products",
+    "content": "<strong>Strengthen funding narratives with clear geospatial evidence.</strong> We deliver map exhibits, metrics dashboards, and implementation visuals that support grant submissions, board reporting, and program updates.",
+    "cta": "Start Grant Support Consultation",
+    "image": "/content-images/blackspike-wallpaper-04.avif",
+    "image_alt": "Grant-support geospatial reporting visuals"
+  }
+]

@@ -18,7 +18,7 @@ import '@fontsource/libre-baskerville/400-italic.css';
 import { Image } from 'astro:assets';
 import bg_image from "../assets/theme-images/hero-topographic.png"
 
-import global_settings from "../data/global_settings.json"
+import global_settings from "../data/site/global_settings.json"
 
 import DialogModal from "../components/DialogModal.astro"
 import FooterMain from "../components/FooterMain.astro"
@@ -84,7 +84,7 @@ const canonicalUrl = new URL(Astro.url.pathname, `${siteOrigin}/`).toString()
     <HeaderMain settings={ global_settings } />
 
     <!-- Main slot -->
-    <main id="main">
+    <main id="main" tabindex="-1">
       <slot />
     </main>
 

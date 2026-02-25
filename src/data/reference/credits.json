@@ -1,0 +1,24 @@
+{
+  "title": "Credits",
+  "content": "The APSU GIS Center website is built with <a href='https://astro.build/'>Astro</a> and <a href='https://tailwindcss.com/'>Tailwind CSS</a> and maintained to support public-sector geospatial services, outreach, and regional collaboration.",
+  "list": [
+    {
+      "item": "Web framework and build tooling: <a href='https://astro.build/'>Astro</a>"
+    },
+    {
+      "item": "UI styling system: <a href='https://tailwindcss.com/'>Tailwind CSS</a>"
+    },
+    {
+      "item": "Carousel functionality: <a href='https://swiperjs.com/'>Swiper</a>"
+    },
+    {
+      "item": "Primary geospatial platform integrations: <a href='https://www.esri.com/'>Esri ArcGIS</a>"
+    },
+    {
+      "item": "Typography resources provided through open-source font packages and APSU brand standards"
+    },
+    {
+      "item": "Content, map links, and service descriptions are maintained by APSU GIS Center and supporting collaborators"
+    }
+  ]
+}

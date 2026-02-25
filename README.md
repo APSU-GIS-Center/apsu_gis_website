@@ -91,6 +91,7 @@ See [dev_docs/deployment_guide.md](dev_docs/deployment_guide.md) for full detail
 - [**Deployment Guide**](dev_docs/deployment_guide.md) - How to go live.
 - [**Future Roadmap**](dev_docs/TODO.md) - Recommendations for improvements.
 - [**Agent Roles**](AGENTS.md) - Guidelines for AI assistance.
+- [**Data Conventions**](src/data/README.md) - Where JSON content files should live.
 
 ## 🎨 Branding
 

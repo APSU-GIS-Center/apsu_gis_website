@@ -30,8 +30,10 @@ const { settings } = Astro.props
         </button>
 
         <address class="not-italic text-sm text-bs-foreground-dark mt-4">
+          APSU GIS Center<br />
           601 N Second St<br />
-          Clarksville, TN 37044
+          Clarksville, TN 37044<br />
+          <a href="tel:+19312217500">931-221-7500</a>
         </address>
 
       </div>
@@ -40,7 +42,7 @@ const { settings } = Astro.props
       <div class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2">
 
         <!-- Nav -->
-        <nav class="flex flex-col">
+        <nav aria-label="Footer" class="flex flex-col">
 
           { settings.nav.flatMap(item => item.submenu ? [item, ...item.submenu] : [item]).filter(i => i.link && i.title !== "—").map( item =>
 
@@ -53,12 +55,13 @@ const { settings } = Astro.props
         </nav>
 
         <!-- Social links -->
-        <nav class="flex flex-col">
+        <nav aria-label="Social links" class="flex flex-col">
 
           { settings.social_links.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
 
-            <a href={ item.link } target="_blank" rel="noopener noreferrer">
+            <a href={ item.link } target="_blank" rel="noopener noreferrer" aria-label={`${item.title} (opens in new tab)`}>
               { item.title }
+              <span class="sr-only"> (opens in new tab)</span>
             </a>
 
           )}

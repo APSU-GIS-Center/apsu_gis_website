@@ -20,7 +20,7 @@ const gallery = [
 ];
 ---
 
-<Layout title="APSU GIS Center - Mapping the Future" description="The GIS Center at Austin Peay State University provides expert geospatial solutions, student training, and community service.">
+<Layout title="APSU GIS Center | Grant-Ready GIS for Tennessee & Southern Kentucky" description="University-powered GIS services helping local governments and public safety teams in Tennessee and Southern Kentucky win grants, improve readiness, and accelerate economic development.">
   
   <!-- Hero Section -->
   <!-- Hero Section -->
@@ -36,18 +36,18 @@ const gallery = [
 
     <div class="relative z-10 max-w-4xl mx-auto space-y-8 animate-fade-in-up">
       <h1 class="font-header text-6xl md:text-7xl/tight lg:text-8xl/tight font-bold tracking-tight text-white drop-shadow-2xl">
-        Real-World Solutions. <span class="text-transparent bg-clip-text bg-gradient-to-r from-apsu-red to-red-400">University Powered.</span>
+        Grant-Ready GIS for <span class="text-transparent bg-clip-text bg-gradient-to-r from-apsu-red to-red-400">Regional Impact.</span>
       </h1>
       <p class="font-body text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-        The APSU GIS Center delivers cost-effective, data-driven strategies for Tennessee and Kentucky communities.
+        The APSU GIS Center helps city and county leaders, emergency management teams, and economic development organizations across Tennessee and Southern Kentucky move from data to funded action.
       </p>
       
       <div class="flex flex-wrap gap-4 justify-center pt-4">
         <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services"} class="bs-btn text-lg bg-apsu-red hover:bg-red-700 text-white border-none shadow-[0_0_20px_rgba(196,30,58,0.4)]">
-          View Our Services
+          Explore Service Packages
         </a>
         <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/contact"} class="bs-btn bs-btn-outline text-lg border-white text-white hover:bg-white hover:text-black">
-          Partner With Us
+          Request a Funding Strategy Call
         </a>
       </div>
     </div>
@@ -60,7 +60,7 @@ const gallery = [
   <section class="bs-container py-24 bg-bs-surface-1">
     <div class="text-center mb-16">
       <h2 class="bs-h2 mb-4">Project Portfolio</h2>
-      <p class="bs-body-text max-w-2xl mx-auto">See how our students and staff leverage advanced technology to solve real-world problems.</p>
+      <p class="bs-body-text max-w-2xl mx-auto">See how APSU teams deliver decision-ready mapping, analytics, and digital workflows for public-sector partners.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
       {gallery.map(item => (
@@ -74,7 +74,6 @@ const gallery = [
         </div>
       ))}
     </div>
-    </div>
     <div class="text-center">
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/portfolio"} class="bs-btn bs-btn-outline border-apsu-red text-apsu-red hover:bg-apsu-red hover:text-white">
         View Full Portfolio
@@ -85,17 +84,30 @@ const gallery = [
   <!-- Impact Metrics -->
   <ImpactMetrics />
 
+  <!-- Team Quick Link -->
+  <section class="bs-container py-16">
+    <div class="bg-bs-surface-2 border border-white/10 rounded-2xl p-8 md:p-10 text-center">
+      <h2 class="bs-h3 mb-3">Meet the APSU GIS Center Team</h2>
+      <p class="bs-body-text max-w-2xl mx-auto mb-6">
+        Learn more about the staff and leadership serving communities across Tennessee and Kentucky.
+      </p>
+      <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/about"} class="bs-btn bs-btn-outline border-apsu-red text-apsu-red hover:bg-apsu-red hover:text-white">
+        View Team Profiles
+      </a>
+    </div>
+  </section>
+
   <!-- Services Grid -->
   <section id="services" class="bs-container py-24">
     <div class="text-center mb-16">
       <h2 class="bs-h2 mb-4">Core Services</h2>
-      <p class="bs-body-text max-w-2xl mx-auto">We provide comprehensive geospatial solutions for campus, community, and commercial partners.</p>
+      <p class="bs-body-text max-w-2xl mx-auto">Built around high-demand regional needs: emergency readiness, infrastructure resilience, and economic competitiveness.</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Public Safety -->
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/public-safety"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
-        <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
+        <div aria-hidden="true" class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           🚒
         </div>
         <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apsu-red transition-colors">Public Safety</h3>
@@ -104,7 +116,7 @@ const gallery = [
 
       <!-- Econ Dev -->
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/economic-development"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
-        <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
+        <div aria-hidden="true" class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           📈
         </div>
         <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apsu-red transition-colors">Economic Dev</h3>
@@ -113,7 +125,7 @@ const gallery = [
 
       <!-- Campus Map -->
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/services/campus-mapping"} class="group bg-bs-surface-2 p-8 rounded-2xl hover:bg-bs-surface-3 transition-all duration-300 border border-transparent hover:border-apsu-red/20">
-        <div class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
+        <div aria-hidden="true" class="w-16 h-16 bg-apsu-red/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform text-apsu-red">
           🎓
         </div>
         <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-apsu-red transition-colors">Campus Mapping</h3>
@@ -122,14 +134,35 @@ const gallery = [
     </div>
   </section>
 
+  <section class="bs-container pb-24">
+    <div class="text-center mb-12">
+      <h2 class="bs-h2 mb-4">Regional Opportunity Priorities</h2>
+      <p class="bs-body-text max-w-3xl mx-auto">Tennessee and Kentucky geospatial ecosystems are expanding shared data infrastructure and cross-agency collaboration. We translate that momentum into executable projects and funding-ready deliverables.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6">
+        <h3 class="text-2xl font-bold text-white mb-3">Public Safety Readiness</h3>
+        <p class="text-bs-foreground-light">Incident mapping, rapid assessment, and resilient operations planning for emergency management and first-response partners.</p>
+      </article>
+      <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6">
+        <h3 class="text-2xl font-bold text-white mb-3">Infrastructure & Asset Intelligence</h3>
+        <p class="text-bs-foreground-light">Utility, transportation, and facilities mapping aligned with authoritative state and local data-clearinghouse resources.</p>
+      </article>
+      <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6">
+        <h3 class="text-2xl font-bold text-white mb-3">Economic Development Competitiveness</h3>
+        <p class="text-bs-foreground-light">Site-selection analytics, workforce indicators, and dashboard storytelling designed for grants, investors, and recruitment teams.</p>
+      </article>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="py-32 bg-apsu-red text-white text-center relative overflow-hidden">
 
     <div class="bs-container relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Ready to leverage the power of GIS?</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Need a grant-ready GIS roadmap this quarter?</h2>
       <a href={import.meta.env.BASE_URL.replace(/\/$/, '') + "/contact"} class="inline-flex items-center gap-2 bg-white text-apsu-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-xl">
-        Start Your Project
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        Start a Strategic Consultation
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
   </section>

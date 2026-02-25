@@ -2,43 +2,75 @@
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import imgCampus from '../../assets/images/campus-aerial.jpg';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const campusOfferings = [
+  {
+    title: 'Interactive Campus Map Operations',
+    items: ['Building, parking, and accessibility wayfinding', 'Data publishing workflows for departments', 'Map portal updates for student-facing services'],
+  },
+  {
+    title: 'Facilities and Utility Mapping',
+    items: ['Utility locate support and map updates', 'Interior floorplans for operations planning', 'Asset layers for maintenance and projects'],
+  },
+  {
+    title: 'Department Support Services',
+    items: ['Event and logistics mapping', 'Parking and circulation analysis', 'Spatial support for campus planning initiatives'],
+  },
+];
 ---
 
-<Layout title="Campus Mapping - APSU GIS Center" description="Comprehensive mapping services for the Austin Peay State University campus.">
+<Layout title="Campus Mapping Services | Facilities, Wayfinding & Operations | APSU GIS Center" description="Improve campus operations with facilities mapping, wayfinding, utility data, and department GIS support. Request a Campus Mapping consultation.">
   <section class="bs-container py-24">
     <div class="max-w-4xl mx-auto">
       <h1 class="bs-h1 mb-6 text-apsu-red">Campus Mapping</h1>
       <p class="bs-body-text text-xl mb-12">
-        The authoritative source for spatial data regarding APSU's physical campus environment.
+        Practical geospatial support for day-to-day campus operations, planning, and student experience.
       </p>
 
       <div class="mb-12 rounded-xl overflow-hidden shadow-xl">
         <Image src={imgCampus} alt="Aerial view of APSU Campus" class="w-full h-auto object-cover" />
       </div>
 
-      <div class="grid gap-8">
+      <h2 class="bs-h3 mb-6">Marketable Service Offerings</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {campusOfferings.map((offering) => (
+          <article class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3">
+            <h3 class="text-2xl font-bold text-white mb-4">{offering.title}</h3>
+            <ul class="space-y-2 text-bs-foreground-light">
+              {offering.items.map((item) => (
+                <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>{item}</span></li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <div class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3 mb-12">
+        <h2 class="bs-h3 mb-4">Operational Outcomes</h2>
+        <ul class="space-y-3 text-bs-foreground-light">
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Improved wayfinding and visitor experience.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Faster coordination across facilities and operations teams.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>More reliable campus data for planning and capital projects.</span></li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-bs-surface-2 p-8 rounded-xl border-l-4 border-apsu-red">
-            <h2 class="bs-h3 mb-2">Interactive Campus Map</h2>
-            <p class="text-bs-foreground-dark mb-4">Find buildings, parking, and accessibility routes.</p>
-            <a href="/maps-data" class="bs-btn text-sm">Launch Map Portal</a>
+          <h2 class="bs-h3 mb-2">Interactive Campus Map</h2>
+          <p class="text-bs-foreground-dark mb-4">Find buildings, parking, and accessibility routes.</p>
+          <a href={baseUrl + '/maps-data'} class="bs-btn text-sm">Launch Map Portal</a>
         </div>
 
-        <div class="bg-bs-surface-2 p-8 rounded-xl">
-            <h2 class="bs-h3 mb-4">Services for Departments</h2>
-            <ul class="grid md:grid-cols-2 gap-4">
-                <li class="flex items-center gap-3">
-                    <span class="text-apsu-red">✓</span> Event Mapping
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="text-apsu-red">✓</span> Utility Locates
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="text-apsu-red">✓</span> Interior Floorplans
-                </li>
-                <li class="flex items-center gap-3">
-                    <span class="text-apsu-red">✓</span> Parking Analysis
-                </li>
-            </ul>
+        <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-8 flex flex-col justify-center">
+          <h2 class="text-2xl font-bold text-white mb-3">Need campus-focused GIS support?</h2>
+          <p class="text-bs-foreground-light mb-5">
+            We can scope a service plan for mapping operations, department requests, and facilities priorities.
+          </p>
+          <a href={baseUrl + '/contact'} class="bs-btn w-fit bg-apsu-red hover:bg-red-700 text-white border-none">
+            Request a Campus Mapping Consultation
+          </a>
         </div>
       </div>
     </div>

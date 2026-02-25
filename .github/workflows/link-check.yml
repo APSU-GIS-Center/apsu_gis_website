@@ -9,21 +9,27 @@ jobs:
   link-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Restore cache
-        uses: actions/cache@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.0.0
+
+      - name: Check toolchain pinning
+        run: pnpm run check:toolchain
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build site
-        run: npm run build
+        run: pnpm build
 
       - name: Check for broken links
         uses: lycheeverse/lychee-action@v1.8.0

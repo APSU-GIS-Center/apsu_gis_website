@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What types of organizations does APSU GIS Center primarily support?",
+    "answer": "We primarily support local and regional public-sector partners, including city and county governments, emergency management teams, public works departments, and economic development organizations across Tennessee and Southern Kentucky."
+  },
+  {
+    "question": "Can you help us define project scope before procurement?",
+    "answer": "Yes. We can begin with a discovery and scoping phase to clarify objectives, required deliverables, available data, dependencies, and implementation timeline so your team can make informed procurement decisions."
+  },
+  {
+    "question": "What deliverables are typically included in a GIS engagement?",
+    "answer": "Typical deliverables include web maps, dashboards, data models, documentation, and presentation-ready reporting products. Each engagement is tailored to the agency's operational and reporting requirements."
+  },
+  {
+    "question": "How quickly can a project start and produce usable outputs?",
+    "answer": "Project timing depends on scope and data readiness, but most engagements are structured in phased milestones so agencies receive usable outputs early while longer-term components are developed."
+  },
+  {
+    "question": "Can APSU GIS Center support grant and funding workflows?",
+    "answer": "Yes. We support grant-ready analytics and mapping products, including evidence maps, dashboard summaries, and data-backed visuals that strengthen proposal narratives and stakeholder communication."
+  },
+  {
+    "question": "How do you handle data governance and agency-owned information?",
+    "answer": "We align delivery with agency data policies and expected governance practices, including agreed access controls, source documentation, and handoff standards so teams can maintain solutions after project closeout."
+  }
+]

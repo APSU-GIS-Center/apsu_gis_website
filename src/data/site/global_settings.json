@@ -1,6 +1,6 @@
 {
   "title": "APSU GIS Center",
-  "description": "We are a mission-driven university entity providing expert geospatial solutions for Public Safety, Facility Resilience, and Economic Development.",
+  "description": "University-powered GIS and data science services helping Tennessee and Southern Kentucky communities improve readiness, strengthen infrastructure, and win competitive funding.",
   "social_image": "/1200x630.jpg",
   "base_url": "https://apsugis.org",
   "demo": {
@@ -74,6 +74,6 @@
       "link": "https://www.linkedin.com/company/apsu-gis-center"
     }
   ],
-  "keywords": "GIS, geospatial, mapping, APSU, public safety, economic development, campus mapping",
+  "keywords": "APSU GIS Center, Tennessee GIS services, Southern Kentucky GIS, public safety mapping, grant support analytics, economic development GIS, facility resilience",
   "canonical_url": "https://apsugis.org"
 }

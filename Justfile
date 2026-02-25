@@ -6,15 +6,15 @@ default:
 
 # Start the development server
 dev:
-    npm run dev
+    pnpm dev
 
 # Build the production site
 build:
-    npm run build
+    pnpm build
 
 # Preview the built site locally
 preview:
-    npm run preview
+    pnpm preview
 
 # Run the broken link checker (requires lychee installed or use npx)
 check-links:
@@ -22,7 +22,11 @@ check-links:
 
 # Install dependencies
 install:
-    npm install
+    pnpm install --frozen-lockfile
+
+# Validate pinned Node/pnpm versions
+check-toolchain:
+    pnpm run check:toolchain
 
 # Run full verification (Build + Link Check)
-verify: build check-links
+verify: check-toolchain build check-links

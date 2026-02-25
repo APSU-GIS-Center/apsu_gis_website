@@ -1,5 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import imgGisDesign from '../assets/images/services-reference/gis-design.jpg';
+import imgDroneMapping from '../assets/images/services-reference/drone-mapping.jpg';
+import imgDevTraining from '../assets/images/services-reference/development-training.jpg';
+import imgToursModels from '../assets/images/services-reference/tours-models.jpg';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const marketableServices = [
+  {
+    title: 'GIS Design',
+    description: 'Plan and architect a GIS program that fits your organization today and scales for future growth.',
+  },
+  {
+    title: 'GIS Maintenance',
+    description: 'Ongoing system health, data updates, and operational support to keep critical GIS tools reliable.',
+  },
+  {
+    title: 'Development',
+    description: 'Custom GIS applications and workflows that reduce manual effort and improve decision speed.',
+  },
+  {
+    title: 'Training',
+    description: 'Role-based training that helps teams adopt GIS faster and use it with confidence.',
+  },
+  {
+    title: 'Custom Maps',
+    description: 'Purpose-built map products for planning, communication, permitting, and executive reporting.',
+  },
+  {
+    title: 'Emergency Management Systems',
+    description: 'Preparedness and response mapping systems designed for interagency coordination and rapid action.',
+  },
+  {
+    title: 'Tours and Models',
+    description: 'Interactive 3D tours and digital models for facilities, infrastructure, and project storytelling.',
+  },
+];
 ---
 
 <Layout title="Our Services | APSU GIS Center" description="Comprehensive geospatial solutions for Public Safety, Municipalities, and Economic Development.">
@@ -18,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Public Safety -->
       <section id="public-safety" class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
-          <div class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
+          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
             🚒
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Public Safety & Resilience</h2>
@@ -37,20 +75,26 @@ import Layout from '../layouts/Layout.astro';
             </li>
           </ul>
         </div>
-        <div class="order-1 md:order-2 bg-bs-surface-2 h-96 rounded-2xl border border-bs-surface-3 flex items-center justify-center text-bs-foreground-dark">
-          <!-- Placeholder for Public Safety Image -->
-          [Public Safety Image Placeholder]
-        </div>
+        <Image
+          src={imgDroneMapping}
+          alt="Drone mapping mission support for public safety and resilience operations"
+          class="order-1 md:order-2 h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
       </section>
 
       <!-- Municipal Solutions -->
       <section id="municipal-solutions" class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="text-right-md bg-bs-surface-2 h-96 rounded-2xl border border-bs-surface-3 flex items-center justify-center text-bs-foreground-dark">
-          <!-- Placeholder for Municipal Image -->
-          [Municipal Image Placeholder]
-        </div>
+        <Image
+          src={imgGisDesign}
+          alt="GIS design and maintenance planning session"
+          class="text-right-md h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
         <div>
-          <div class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
+          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
             🏛️
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Municipal Solutions & Stormwater</h2>
@@ -74,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Economic Development -->
       <section id="economic-development" class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
-          <div class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
+          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
             📈
           </div>
           <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Data Science & Economic Development</h2>
@@ -93,12 +137,52 @@ import Layout from '../layouts/Layout.astro';
             </li>
           </ul>
         </div>
-        <div class="order-1 md:order-2 bg-bs-surface-2 h-96 rounded-2xl border border-bs-surface-3 flex items-center justify-center text-bs-foreground-dark">
-          <!-- Placeholder for Econ Dev Image -->
-          [Data Science Image Placeholder]
-        </div>
+        <Image
+          src={imgDevTraining}
+          alt="Team collaboration for development and training solutions"
+          class="order-1 md:order-2 h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
       </section>
 
     </div>
+
+    <section class="mt-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="bs-h2 mb-4">Additional Marketable Service Offerings</h2>
+        <p class="text-bs-foreground-light text-lg">
+          Services frequently requested by public agencies, utilities, and regional development partners.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {marketableServices.map((service) => (
+          <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-3">{service.title}</h3>
+            <p class="text-bs-foreground-light">{service.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-10">
+        <Image
+          src={imgToursModels}
+          alt="Immersive digital tours and 3D models for facilities and infrastructure"
+          class="h-72 w-full object-cover rounded-2xl border border-bs-surface-3"
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
+        <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-8 flex flex-col justify-center">
+          <h3 class="text-2xl font-bold text-white mb-4">Need a custom solution mix?</h3>
+          <p class="text-bs-foreground-light mb-6">
+            We combine GIS design, mapping, development, training, and field data services into one implementation plan tailored to your goals.
+          </p>
+          <a href={baseUrl + '/contact'} class="bs-btn w-fit bg-apsu-red hover:bg-red-700 text-white border-none">
+            Request a Services Consultation
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>

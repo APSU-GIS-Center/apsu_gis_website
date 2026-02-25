@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Public Safety Readiness,<br>Operationalized.",
+    "sector": "Emergency Management GIS",
+    "content": "<strong>Regional response partners needed faster incident awareness and clearer coordination products.</strong><br><br>APSU GIS Center delivered mission-ready map layers, drone-informed situational products, and dashboard views that supported multi-agency planning and operational decision cycles.",
+    "case_study_link": "/services/public-safety",
+    "cta": "View Public Safety Services",
+    "image": "/content-images/spike.news.avif",
+    "image_alt": "Public safety dashboard and mapping workflow preview",
+    "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
+  },
+  {
+    "title": "Economic Development Intelligence,<br>Decision-Ready.",
+    "sector": "Site Selection & Analytics",
+    "content": "An economic development team required defensible location intelligence for prospect conversations and funding narratives.<br><br>We assembled parcel, workforce, infrastructure, and demographic indicators into executive-ready map products and dashboard views that accelerated proposal development.",
+    "case_study_link": "/services/economic-development",
+    "cta": "Explore Economic Development Services",
+    "image": "/content-images/pixelate.pictures.avif",
+    "image_alt": "Economic development dashboard and analytics interface",
+    "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
+  },
+  {
+    "title": "County GIS Access,<br>Scaled for the Public.",
+    "sector": "Municipal GIS Delivery",
+    "content": "County stakeholders needed reliable public-facing GIS access and clearer pathways to authoritative map information.<br><br>APSU GIS Center supported deployment and continuity for county map experiences, improving transparency for residents and reducing internal map-request friction.",
+    "case_study_link": "/maps-data",
+    "cta": "View Maps & Data",
+    "image": "/content-images/brighton.dog.avif",
+    "image_alt": "County GIS web map interface",
+    "bg": "bg-gradient-to-r from-pink-500 to-yellow-500"
+  }
+]

@@ -2,7 +2,18 @@
   "name": "blackspike-astro-landing-page",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.18.0 <21",
+    "pnpm": ">=9 <10"
+  },
+  "volta": {
+    "node": "20.18.0",
+    "pnpm": "9.0.0"
+  },
   "scripts": {
+    "preinstall": "node -e \"if (!/pnpm/.test(process.env.npm_config_user_agent || '')) { console.error('\\nThis project uses pnpm. Run: corepack enable && pnpm install\\n'); process.exit(1); }\"",
+    "check:toolchain": "node scripts/check-toolchain.mjs",
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",

@@ -3,33 +3,47 @@ import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
 ---
 
-<Layout title="Contact Us - APSU GIS Center" description="Get in touch with the APSU GIS Center for services, partnerships, or general inquiries.">
+<Layout title="Contact APSU GIS Center | Funding & GIS Strategy Consultations" description="Request a consultation for public safety, economic development, and grant-ready GIS services across Tennessee and Southern Kentucky.">
   <section class="bs-container py-24 grid lg:grid-cols-2 gap-16">
     <div>
-      <h1 class="bs-h1 mb-6">Get in Touch</h1>
+      <h1 class="bs-h1 mb-6">Schedule a Consultation</h1>
       <p class="bs-body-text text-lg text-bs-foreground-light mb-8">
-        We are ready to assist with your geospatial needs. Whether you need a custom map, data analysis, or student opportunities, reach out to us.
+        Tell us your priorities, timeline, and funding goals. We support city and county leaders, public safety teams, and economic development organizations with scoped GIS implementation plans.
       </p>
       
       <div class="space-y-6">
         <div>
-          <h3 class="text-xl font-bold text-white mb-2">Location</h3>
+          <h2 class="text-xl font-bold text-white mb-2">Best fit requests</h2>
+          <ul class="space-y-2 text-bs-foreground-dark">
+            <li>Public safety and resilience mapping programs</li>
+            <li>Grant support analytics and map deliverables</li>
+            <li>Economic development dashboards and site-selection studies</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white mb-2">Location</h2>
           <p class="text-bs-foreground-dark">
-            Austin Peay State University<br/>
-            Claxton Building/Maynard Mathematics and Computer Science Building<br/>
+            APSU GIS Center<br/>
+            601 N Second St<br/>
             Clarksville, TN 37044
           </p>
         </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-white mb-2">Phone</h2>
+          <a href="tel:+19312217500" class="text-apsu-red hover:text-white transition-colors">931-221-7500</a>
+        </div>
         
         <div>
-          <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+          <h2 class="text-xl font-bold text-white mb-2">Email</h2>
           <a href="mailto:gis@apsu.edu" class="text-apsu-red hover:text-white transition-colors">gis@apsu.edu</a>
         </div>
       </div>
     </div>
 
     <div class="bg-bs-surface-2 p-8 rounded-2xl">
-      <h2 class="text-2xl font-bold mb-6">Send us a message</h2>
+      <h2 class="text-2xl font-bold mb-6">Share your project goals</h2>
       <ContactForm />
     </div>
   </section>

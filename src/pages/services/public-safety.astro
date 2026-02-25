@@ -1,39 +1,63 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const publicSafetyOfferings = [
+  {
+    title: 'Emergency Management Systems',
+    items: ['Incident mapping and command support', 'Resource allocation and response routing', 'Hazard and risk exposure analysis'],
+  },
+  {
+    title: 'Drone Mapping for Rapid Assessment',
+    items: ['Post-event damage intelligence', 'Critical infrastructure aerial documentation', 'Operational map updates for responders'],
+  },
+  {
+    title: 'Facility Resilience Planning',
+    items: ['Indoor and campus-scale preparedness maps', 'Utility and asset continuity planning', 'Scenario planning for disruptions and recovery'],
+  },
+];
 ---
 
-<Layout title="Public Safety & Resilience - APSU GIS Center" description="Geospatial solutions for emergency management, hazard mitigation, and facility resilience.">
+<Layout title="Public Safety GIS Services | Emergency Mapping & Resilience | APSU GIS Center" description="Deploy emergency management mapping, drone-based rapid assessment, and resilience planning services. Request a Public Safety GIS consultation with APSU GIS Center.">
   <section class="bs-container py-24">
     <div class="max-w-4xl mx-auto">
       <h1 class="bs-h1 mb-6 text-apsu-red">Public Safety & Facility Resilience</h1>
       <p class="bs-body-text text-xl mb-12">
-        We partner with local and regional agencies to provide data-driven insights for emergency response and hazard mitigation.
+        Mission-ready geospatial systems for emergency managers, first responders, and critical infrastructure teams.
       </p>
 
-      <div class="grid md:grid-cols-2 gap-12">
-        <div class="bg-bs-surface-2 p-8 rounded-xl">
-          <h2 class="bs-h3 mb-4">Emergency Management</h2>
-          <p class="mb-4 text-bs-foreground-dark">
-            Our team develops real-time dashboards and mapping applications that assist first responders and emergency managers in situational awareness.
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-bs-foreground-light">
-            <li>Incident Mapping</li>
-            <li>Resource Allocation</li>
-            <li>Hazard Analysis</li>
-          </ul>
-        </div>
+      <h2 class="bs-h3 mb-6">Marketable Service Offerings</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {publicSafetyOfferings.map((offering) => (
+          <article class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3">
+            <h3 class="text-2xl font-bold text-white mb-4">{offering.title}</h3>
+            <ul class="space-y-2 text-bs-foreground-light">
+              {offering.items.map((item) => (
+                <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>{item}</span></li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
 
-        <div class="bg-bs-surface-2 p-8 rounded-xl">
-          <h2 class="bs-h3 mb-4">Facility Resilience</h2>
-          <p class="mb-4 text-bs-foreground-dark">
-            We map and analyze critical infrastructure to ensure continuity of operations during disruptions.
-          </p>
-          <ul class="list-disc list-inside space-y-2 text-bs-foreground-light">
-            <li>Indoor Mapping</li>
-            <li>Utility Network Analysis</li>
-            <li>Asset Management</li>
-          </ul>
-        </div>
+      <div class="bg-bs-surface-2 p-8 rounded-xl border border-bs-surface-3 mb-12">
+        <h2 class="bs-h3 mb-4">Why Agencies Choose This Service</h2>
+        <ul class="space-y-3 text-bs-foreground-light">
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Faster incident understanding during critical windows.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Better coordination across public safety and public works teams.</span></li>
+          <li class="flex items-start gap-3"><span class="text-apsu-red mt-1">✓</span><span>Operational resilience planning grounded in local data.</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-8 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Plan your public safety GIS roadmap</h2>
+        <p class="text-bs-foreground-light mb-6">
+          Get a scoped implementation plan for emergency management systems, rapid mapping workflows, and resilience priorities.
+        </p>
+        <a href={baseUrl + '/contact'} class="bs-btn bg-apsu-red hover:bg-red-700 text-white border-none">
+          Request a Public Safety Consultation
+        </a>
       </div>
     </div>
   </section>
