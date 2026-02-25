@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apsugis.org/sitemap-index.xml

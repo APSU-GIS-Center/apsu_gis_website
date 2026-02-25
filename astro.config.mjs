@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://apsu-gis-center.github.io', // Placeholder, user can update
+  site: 'https://apsugis.org',
   base: '/', // Updated for root deployment
   integrations: [sitemap()],
   vite: {
