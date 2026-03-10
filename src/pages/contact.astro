@@ -1,12 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+const service = Astro.url.searchParams.get('service') || '';
+
+const serviceLabels = {
+  'public-safety': 'Public Safety',
+  'municipal-solutions': 'Municipal Solutions',
+  'economic-development': 'Economic Development',
+  'campus-mapping': 'Campus Mapping',
+};
+
+const serviceLabel = serviceLabels[service as keyof typeof serviceLabels] || '';
 ---
 
 <Layout title="Contact APSU GIS Center | Funding & GIS Strategy Consultations" description="Request a consultation for public safety, economic development, and grant-ready GIS services across Tennessee and Southern Kentucky.">
   <section class="bs-container py-24 grid lg:grid-cols-2 gap-16">
     <div>
       <h1 class="bs-h1 mb-6">Schedule a Consultation</h1>
+      {serviceLabel && (
+        <p class="text-sm text-apsu-red font-semibold mb-4">
+          Service context: {serviceLabel}
+        </p>
+      )}
       <p class="bs-body-text text-lg text-bs-foreground-light mb-8">
         Tell us your priorities, timeline, and funding goals. We support city and county leaders, public safety teams, and economic development organizations with scoped GIS implementation plans.
       </p>
@@ -44,7 +60,7 @@ import ContactForm from '../components/ContactForm.astro';
 
     <div class="bg-bs-surface-2 p-8 rounded-2xl">
       <h2 class="text-2xl font-bold mb-6">Share your project goals</h2>
-      <ContactForm />
+      <ContactForm serviceContext={service} serviceLabel={serviceLabel} />
     </div>
   </section>
 </Layout>

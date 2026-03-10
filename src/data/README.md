@@ -10,7 +10,7 @@ This directory stores JSON data used by Astro pages and components.
 
 - `sections/`
   - Reusable page-section content (homepage blocks, services, testimonials, etc.).
-  - Examples: `home.json`, `services.json`, `testimonials.json`, `faq.json`
+  - Examples: `home.json`, `services.json`, `services_proof_points.json`, `testimonials.json`, `faq.json`
 
 - `reference/`
   - Reference/legal/credits-style content used by supporting pages.
@@ -23,3 +23,22 @@ This directory stores JSON data used by Astro pages and components.
 - Avoid duplicating the same content across multiple files.
 - Update import paths when moving files.
 - Preserve existing data contracts used by Astro components/pages.
+
+## Services Schema Notes
+
+`sections/services.json` now uses an object contract with `hero`, `categories`,
+`services`, `comparison`, and `inquiry_intro` keys.
+
+Each `services[]` record should include:
+
+- `id`, `slug`, `title`, `summary`
+- `audience` (array)
+- `affordability_tier` (`entry-level`, `standard`, `advanced`, or `mixed`)
+- `expected_outcome`
+- `service_category`
+- `cta_text`, `cta_link`
+- `fallback_text`, `fallback_link`
+- `active`
+
+`sections/services_proof_points.json` stores objective, scannable metrics with
+`label`, `value`, and `context`.

@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Years Serving Communities",
+    "value": "23+",
+    "context": "APSU GIS Center mission support across Tennessee and Southern Kentucky"
+  },
+  {
+    "label": "Core Service Tracks",
+    "value": "4",
+    "context": "Public safety, municipal, economic development, and campus mapping"
+  },
+  {
+    "label": "Affordability Levels",
+    "value": "3",
+    "context": "Entry-level, standard, and advanced delivery pathways"
+  },
+  {
+    "label": "Fallback Coverage",
+    "value": "100%",
+    "context": "Every service CTA includes a backup inquiry route"
+  }
+]

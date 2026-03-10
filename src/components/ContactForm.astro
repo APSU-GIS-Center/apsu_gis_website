@@ -1,7 +1,16 @@
 ---
+interface Props {
+  serviceContext?: string;
+  serviceLabel?: string;
+}
+
+const { serviceContext = '', serviceLabel = '' } = Astro.props;
+
+const selectedSubject = serviceLabel ? `Request GIS Services - ${serviceLabel}` : 'Request GIS Services';
 ---
 <form name="contact" netlify method="POST" class="space-y-4">
   <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="service_context" value={serviceContext} />
   
   <div>
     <label for="name" class="block text-sm font-medium text-bs-foreground-light mb-1">Name</label>
@@ -16,8 +25,11 @@
   <div>
     <label for="subject" class="block text-sm font-medium text-bs-foreground-light mb-1">Subject</label>
     <select name="subject" id="subject" class="w-full bg-bs-surface-3 border border-transparent focus:border-apsu-red rounded-md px-4 py-3 text-white focus:outline-none transition-colors">
-      <option value="General Inquiry">General Inquiry</option>
-      <option value="Request Services">Request GIS Services</option>
+      <option value="General Inquiry" selected={selectedSubject === 'General Inquiry'}>General Inquiry</option>
+      <option value="Request GIS Services" selected={selectedSubject === 'Request GIS Services'}>Request GIS Services</option>
+      {serviceLabel && (
+        <option value={selectedSubject} selected>{selectedSubject}</option>
+      )}
       <option value="Student Internship">Student Internship Application</option>
       <option value="Partnership">Partnership Opportunity</option>
     </select>

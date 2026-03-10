@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  ctaText: string;
+  ctaLink: string;
+  fallbackText: string;
+  fallbackLink: string;
+}
+
+const {
+  title,
+  ctaText = 'Request Service Details',
+  ctaLink = '/contact',
+  fallbackText = 'If this route is unavailable, use our core consultation form.',
+  fallbackLink = '/contact',
+} = Astro.props;
+---
+
+<article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6 h-full flex flex-col">
+  <h3 class="text-xl font-bold text-white mb-3">{title}</h3>
+  <a href={ctaLink} class="bs-btn bg-apsu-red hover:bg-red-700 text-white border-none w-fit mb-4">
+    {ctaText}
+  </a>
+  <p class="text-sm text-bs-foreground-dark mb-3">{fallbackText}</p>
+  <a href={fallbackLink} class="text-sm text-apsu-red hover:text-white transition-colors mt-auto">
+    Open fallback path
+  </a>
+</article>

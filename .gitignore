@@ -22,3 +22,17 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# common build artifacts
+build/
+
+# general logs
+*.log
+
+# broader env file coverage
+.env*
+
+# universal OS/editor temp files
+Thumbs.db
+*.tmp
+*.swp

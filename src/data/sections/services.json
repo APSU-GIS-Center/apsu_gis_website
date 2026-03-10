@@ -1,30 +1,154 @@
-[
-  {
-    "title": "Public Safety Mapping<br>for Operational Readiness",
-    "content": "<strong>Support emergency managers and response teams with usable geospatial intelligence.</strong> We scope and deliver incident pre-plan layers, rapid assessment workflows, and response-support products aligned to real operational constraints.",
-    "cta": "Request Public Safety Scope",
-    "image": "/content-images/blackspike-wallpaper-01.avif",
-    "image_alt": "Public safety geospatial planning session"
+{
+  "hero": {
+    "title": "Choose a Service Mix That Fits Your Budget",
+    "content": "<strong>University-powered GIS support built for real budget pressure.</strong> Compare services by outcomes, audience fit, and affordability tier, then move straight to a scoped consultation."
   },
-  {
-    "title": "Infrastructure Resilience<br>and Asset Intelligence",
-    "content": "<strong>Turn existing data layers into planning-grade infrastructure insight.</strong> We help agencies build asset inventories, risk overlays, and executive-facing map products that improve capital planning and continuity decisions.",
-    "cta": "Plan Resilience Deliverables",
-    "image": "/content-images/blackspike-wallpaper-02.avif",
-    "image_alt": "Infrastructure and asset analytics dashboard"
-  },
-  {
-    "title": "Economic Development<br>Site and Workforce Analytics",
-    "content": "<strong>Equip economic development leaders with defensible location intelligence.</strong> We package site, workforce, and demographic indicators into map products and dashboards for recruitment, stakeholder briefings, and proposal support.",
-    "cta": "Build Economic Intelligence Package",
-    "image": "/content-images/blackspike-wallpaper-03.avif",
-    "image_alt": "Economic development analytics briefing"
-  },
-  {
-    "title": "Grant Support Mapping<br>and Reporting Products",
-    "content": "<strong>Strengthen funding narratives with clear geospatial evidence.</strong> We deliver map exhibits, metrics dashboards, and implementation visuals that support grant submissions, board reporting, and program updates.",
-    "cta": "Start Grant Support Consultation",
-    "image": "/content-images/blackspike-wallpaper-04.avif",
-    "image_alt": "Grant-support geospatial reporting visuals"
+  "categories": [
+    {
+      "id": "public-safety",
+      "title": "Public Safety and Resilience",
+      "description": "Operational GIS support for emergency readiness, rapid response, and interagency coordination.",
+      "display_order": 1
+    },
+    {
+      "id": "municipal-solutions",
+      "title": "Municipal Solutions",
+      "description": "Practical infrastructure and compliance-focused mapping support for city and county teams.",
+      "display_order": 2
+    },
+    {
+      "id": "economic-development",
+      "title": "Economic Development",
+      "description": "Data-backed site and workforce intelligence for grants, recruitment, and stakeholder decisions.",
+      "display_order": 3
+    },
+    {
+      "id": "campus-mapping",
+      "title": "Campus Mapping and Digital Experience",
+      "description": "Wayfinding, facilities context, and digital visualization products for campus and institutional users.",
+      "display_order": 4
+    }
+  ],
+  "services": [
+    {
+      "id": "rapid-response-mapping",
+      "slug": "public-safety",
+      "title": "Rapid Response Mapping",
+      "summary": "Deploy incident-ready maps and overlays fast for emergency teams.",
+      "audience": [
+        "Emergency Management",
+        "Public Safety Leadership"
+      ],
+      "affordability_tier": "entry-level",
+      "expected_outcome": "Reduce decision lag during active incidents.",
+      "service_category": "public-safety",
+      "capabilities": [
+        "Incident overlays",
+        "Search area map packages",
+        "Responder-ready exports"
+      ],
+      "proof_point": "Used in regional incident-support workflows with county partners.",
+      "cta_text": "Request Public Safety Support",
+      "cta_link": "/contact?service=public-safety",
+      "fallback_text": "Need help immediately? Use our main consultation form.",
+      "fallback_link": "/contact",
+      "active": true
+    },
+    {
+      "id": "stormwater-and-asset-intelligence",
+      "slug": "municipal-solutions",
+      "title": "Stormwater and Asset Intelligence",
+      "summary": "Support permitting, asset visibility, and infrastructure planning with practical GIS deliverables.",
+      "audience": [
+        "Municipal Operations",
+        "Public Works"
+      ],
+      "affordability_tier": "standard",
+      "expected_outcome": "Improve compliance readiness and prioritize capital decisions.",
+      "service_category": "municipal-solutions",
+      "capabilities": [
+        "MS4 support mapping",
+        "Asset inventory overlays",
+        "Executive-ready map products"
+      ],
+      "proof_point": "Structured map/report outputs for recurring municipal compliance cycles.",
+      "cta_text": "Plan Municipal Deliverables",
+      "cta_link": "/contact?service=municipal-solutions",
+      "fallback_text": "Prefer a direct conversation? Contact the GIS team through our consultation page.",
+      "fallback_link": "/contact",
+      "active": true
+    },
+    {
+      "id": "site-and-workforce-analytics",
+      "slug": "economic-development",
+      "title": "Site and Workforce Analytics",
+      "summary": "Package location and demographic intelligence for grant and recruitment decisions.",
+      "audience": [
+        "Economic Development",
+        "Grant Program Leaders"
+      ],
+      "affordability_tier": "mixed",
+      "expected_outcome": "Strengthen funding narratives and investment readiness.",
+      "service_category": "economic-development",
+      "capabilities": [
+        "Site suitability mapping",
+        "Workforce demographic analysis",
+        "Grant support exhibits"
+      ],
+      "proof_point": "Applied to proposal-ready map briefs and data-backed stakeholder packages.",
+      "cta_text": "Build Economic Intelligence Package",
+      "cta_link": "/contact?service=economic-development",
+      "fallback_text": "If package request links fail, start from our standard consultation form.",
+      "fallback_link": "/contact",
+      "active": true
+    },
+    {
+      "id": "campus-wayfinding-and-visualization",
+      "slug": "campus-mapping",
+      "title": "Campus Wayfinding and Visualization",
+      "summary": "Deliver campus-focused maps, tours, and digital context products for facilities and visitors.",
+      "audience": [
+        "Campus Operations",
+        "Facilities and Planning"
+      ],
+      "affordability_tier": "advanced",
+      "expected_outcome": "Improve navigation clarity and facilities communication.",
+      "service_category": "campus-mapping",
+      "capabilities": [
+        "Interactive wayfinding maps",
+        "Facilities visualization",
+        "Stakeholder communication assets"
+      ],
+      "proof_point": "Supports campus planning and communication efforts with visual clarity.",
+      "cta_text": "Start Campus Mapping Consultation",
+      "cta_link": "/contact?service=campus-mapping",
+      "fallback_text": "Need a broader scope discussion? Use the core contact route.",
+      "fallback_link": "/contact",
+      "active": true
+    }
+  ],
+  "comparison": [
+    {
+      "tier": "Entry-Level",
+      "best_for": "Urgent needs with tight budgets",
+      "typical_scope": "Focused map deliverables and rapid support",
+      "example_services": "Rapid Response Mapping"
+    },
+    {
+      "tier": "Standard",
+      "best_for": "Recurring operational and compliance workflows",
+      "typical_scope": "Multi-deliverable packages with periodic updates",
+      "example_services": "Stormwater and Asset Intelligence"
+    },
+    {
+      "tier": "Advanced",
+      "best_for": "Complex, high-visibility initiatives",
+      "typical_scope": "Integrated analytics, visualization, and stakeholder-ready outputs",
+      "example_services": "Campus Wayfinding and Visualization"
+    }
+  ],
+  "inquiry_intro": {
+    "title": "Ready to Scope Your Service Mix?",
+    "content": "Choose a service package or request a custom blend. If a service-specific route is unavailable, every card includes a fallback path so you are never blocked from contacting the team."
   }
-]
+}

@@ -1,0 +1,23 @@
+---
+interface ProofPoint {
+  label: string;
+  value: string;
+  context: string;
+}
+
+interface Props {
+  points: ProofPoint[];
+}
+
+const { points } = Astro.props;
+---
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  {(points || []).map((point) => (
+    <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-5">
+      <p class="text-3xl font-bold text-white mb-2">{point.value}</p>
+      <p class="text-sm font-semibold text-bs-foreground-light mb-2">{point.label}</p>
+      <p class="text-xs text-bs-foreground-dark">{point.context}</p>
+    </article>
+  ))}
+</div>

@@ -1,188 +1,88 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import imgGisDesign from '../assets/images/services-reference/gis-design.jpg';
-import imgDroneMapping from '../assets/images/services-reference/drone-mapping.jpg';
-import imgDevTraining from '../assets/images/services-reference/development-training.jpg';
-import imgToursModels from '../assets/images/services-reference/tours-models.jpg';
+import ServicesBuffet from '../components/ServicesBuffet.astro';
+import ServicesComparisonMatrix from '../components/ServicesComparisonMatrix.astro';
+import ServicesProofPoints from '../components/ServicesProofPoints.astro';
+import ServiceInquiryCard from '../components/ServiceInquiryCard.astro';
+import servicesData from '../data/sections/services.json';
+import proofPoints from '../data/sections/services_proof_points.json';
 
 const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const marketableServices = [
-  {
-    title: 'GIS Design',
-    description: 'Plan and architect a GIS program that fits your organization today and scales for future growth.',
-  },
-  {
-    title: 'GIS Maintenance',
-    description: 'Ongoing system health, data updates, and operational support to keep critical GIS tools reliable.',
-  },
-  {
-    title: 'Development',
-    description: 'Custom GIS applications and workflows that reduce manual effort and improve decision speed.',
-  },
-  {
-    title: 'Training',
-    description: 'Role-based training that helps teams adopt GIS faster and use it with confidence.',
-  },
-  {
-    title: 'Custom Maps',
-    description: 'Purpose-built map products for planning, communication, permitting, and executive reporting.',
-  },
-  {
-    title: 'Emergency Management Systems',
-    description: 'Preparedness and response mapping systems designed for interagency coordination and rapid action.',
-  },
-  {
-    title: 'Tours and Models',
-    description: 'Interactive 3D tours and digital models for facilities, infrastructure, and project storytelling.',
-  },
-];
+const orderedCategories = [...servicesData.categories].sort((a, b) => a.display_order - b.display_order);
+const activeServices = servicesData.services.filter((service) => service.active !== false);
+const unavailableServices = activeServices.filter((service) => !service.cta_link && !service.fallback_link);
 ---
 
-<Layout title="Our Services | APSU GIS Center" description="Comprehensive geospatial solutions for Public Safety, Municipalities, and Economic Development.">
-  
-  <div class="bs-container py-32">
-    <div class="text-center max-w-3xl mx-auto mb-20">
-      <h1 class="bs-h1 mb-6">Core Services</h1>
-      <p class="text-xl text-bs-foreground-light">
-        We provide cost-effective, data-driven strategies for Tennessee and Kentucky communities, bridging the gap between academic innovation and municipal needs.
+<Layout
+  title="Services | APSU GIS Center"
+  description="Compare affordable GIS service packages by outcomes, audience fit, and delivery tier."
+>
+  <div class="bs-container py-24 space-y-20">
+    <section class="max-w-4xl">
+      <p class="text-xs uppercase tracking-[0.2em] text-bs-foreground-dark mb-3">Services Buffet</p>
+      <h1 class="bs-h1 mb-6">{servicesData.hero.title}</h1>
+      <p class="text-lg text-bs-foreground-light" set:html={servicesData.hero.content} />
+    </section>
+
+    <section aria-labelledby="services-proof-points">
+      <h2 id="services-proof-points" class="bs-h2 mb-6">By the Numbers</h2>
+      <ServicesProofPoints points={proofPoints} />
+    </section>
+
+    <section aria-labelledby="services-catalog">
+      <h2 id="services-catalog" class="bs-h2 mb-6">Compare Services by Outcome and Tier</h2>
+      <p class="text-bs-foreground-light mb-8 max-w-3xl">
+        Start with the service that best matches your current pressure points, then expand to a fuller implementation mix as budget allows.
       </p>
-    </div>
+      <ServicesBuffet services={activeServices} />
+    </section>
 
-    <!-- Service Pillars -->
-    <div class="space-y-32">
-      
-      <!-- Public Safety -->
-      <section id="public-safety" class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
-            🚒
-          </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Public Safety & Resilience</h2>
-          <p class="text-lg text-bs-foreground-light mb-6 leading-relaxed">
-            When seconds count, data matters. We provide rapid aerial mapping and 3D digital twins of critical infrastructure to help First Responders plan, react, and recover.
-          </p>
-          <ul class="space-y-3 text-bs-foreground-light">
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> UAV / Drone Mapping for Search & Rescue
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> Hazard Mitigation Planning
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> NG911 Data Standardization
-            </li>
-          </ul>
-        </div>
-        <Image
-          src={imgDroneMapping}
-          alt="Drone mapping mission support for public safety and resilience operations"
-          class="order-1 md:order-2 h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 768px) 50vw, 100vw"
-        />
-      </section>
-
-      <!-- Municipal Solutions -->
-      <section id="municipal-solutions" class="grid md:grid-cols-2 gap-12 items-center">
-        <Image
-          src={imgGisDesign}
-          alt="GIS design and maintenance planning session"
-          class="text-right-md h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 768px) 50vw, 100vw"
-        />
-        <div>
-          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
-            🏛️
-          </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Municipal Solutions & Stormwater</h2>
-          <p class="text-lg text-bs-foreground-light mb-6 leading-relaxed">
-            Regulatory compliance made simple. We help municipalities manage stormwater systems, map utilities, and meet federal mandates without the overhead of enterprise engineering firms.
-          </p>
-          <ul class="space-y-3 text-bs-foreground-light">
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> MS4 Compliance & Reporting
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> Utility Asset Management
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> NPDES Permit Support
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Economic Development -->
-      <section id="economic-development" class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <div aria-hidden="true" class="w-20 h-20 bg-apsu-red/10 rounded-2xl flex items-center justify-center text-4xl mb-6 text-apsu-red">
-            📈
-          </div>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Data Science & Economic Development</h2>
-          <p class="text-lg text-bs-foreground-light mb-6 leading-relaxed">
-            Data that drives growth. We use advanced analytics to provide the community snapshots and demographic intelligence you need to win grants and attract business investment.
-          </p>
-          <ul class="space-y-3 text-bs-foreground-light">
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> Site Selection Analysis
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> Workforce Demographics
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="text-apsu-red">✓</span> Grant Writing Data Support
-            </li>
-          </ul>
-        </div>
-        <Image
-          src={imgDevTraining}
-          alt="Team collaboration for development and training solutions"
-          class="order-1 md:order-2 h-96 w-full object-cover rounded-2xl border border-bs-surface-3"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 768px) 50vw, 100vw"
-        />
-      </section>
-
-    </div>
-
-    <section class="mt-24">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="bs-h2 mb-4">Additional Service Offerings</h2>
-        <p class="text-bs-foreground-light text-lg">
-          Services frequently requested by public agencies, utilities, and regional development partners.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {marketableServices.map((service) => (
-          <article class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6">
-            <h3 class="text-xl font-bold text-white mb-3">{service.title}</h3>
-            <p class="text-bs-foreground-light">{service.description}</p>
+    <section aria-labelledby="services-categories" class="space-y-8">
+      <h2 id="services-categories" class="bs-h2">Service Tracks</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {orderedCategories.map((category) => (
+          <article id={category.id} class="bg-bs-surface-2 border border-bs-surface-3 rounded-xl p-6 scroll-mt-32">
+            <h3 class="text-2xl font-bold text-white mb-3">{category.title}</h3>
+            <p class="text-bs-foreground-light">{category.description}</p>
           </article>
         ))}
       </div>
+    </section>
 
-      <div class="grid md:grid-cols-2 gap-6 mt-10">
-        <Image
-          src={imgToursModels}
-          alt="Immersive digital tours and 3D models for facilities and infrastructure"
-          class="h-72 w-full object-cover rounded-2xl border border-bs-surface-3"
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 768px) 50vw, 100vw"
-        />
-        <div class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-8 flex flex-col justify-center">
-          <h3 class="text-2xl font-bold text-white mb-4">Need a custom solution mix?</h3>
-          <p class="text-bs-foreground-light mb-6">
-            We combine GIS design, mapping, development, training, and field data services into one implementation plan tailored to your goals.
-          </p>
-          <a href={baseUrl + '/contact'} class="bs-btn w-fit bg-apsu-red hover:bg-red-700 text-white border-none">
-            Request a Services Consultation
-          </a>
-        </div>
+    <section aria-labelledby="comparison-matrix" class="space-y-6">
+      <h2 id="comparison-matrix" class="bs-h2">Affordability Comparison Matrix</h2>
+      <ServicesComparisonMatrix rows={servicesData.comparison} />
+    </section>
+
+    <section aria-labelledby="service-inquiry" class="space-y-6">
+      <div>
+        <h2 id="service-inquiry" class="bs-h2 mb-3">{servicesData.inquiry_intro.title}</h2>
+        <p class="text-bs-foreground-light max-w-3xl">{servicesData.inquiry_intro.content}</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {activeServices.map((service) => (
+          <ServiceInquiryCard
+            title={service.title}
+            ctaText={service.cta_text}
+            ctaLink={service.cta_link || (baseUrl + '/contact')}
+            fallbackText={service.fallback_text}
+            fallbackLink={service.fallback_link || (baseUrl + '/contact')}
+          />
+        ))}
       </div>
     </section>
+
+    {unavailableServices.length > 0 && (
+      <section aria-live="polite" class="bg-bs-surface-2 border border-apsu-red/40 rounded-xl p-6">
+        <h2 class="text-xl font-bold text-white mb-2">Temporary Service Route Notice</h2>
+        <p class="text-bs-foreground-light mb-3">
+          Some service-specific routes are temporarily unavailable. Continue through our primary consultation path while we restore direct links.
+        </p>
+        <a href={baseUrl + '/contact'} class="bs-btn bg-apsu-red hover:bg-red-700 text-white border-none">
+          Continue to Consultation
+        </a>
+      </section>
+    )}
   </div>
 </Layout>

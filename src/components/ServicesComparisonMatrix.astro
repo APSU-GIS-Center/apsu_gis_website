@@ -1,0 +1,37 @@
+---
+interface ComparisonRow {
+  tier: string;
+  best_for: string;
+  typical_scope: string;
+  example_services: string;
+}
+
+interface Props {
+  rows: ComparisonRow[];
+}
+
+const { rows } = Astro.props;
+---
+
+<div class="overflow-x-auto rounded-2xl border border-bs-surface-3 bg-bs-surface-2">
+  <table class="w-full min-w-[680px] text-left">
+    <thead>
+      <tr class="border-b border-bs-surface-3">
+        <th class="px-5 py-4 text-xs uppercase tracking-wide text-bs-foreground-dark">Tier</th>
+        <th class="px-5 py-4 text-xs uppercase tracking-wide text-bs-foreground-dark">Best For</th>
+        <th class="px-5 py-4 text-xs uppercase tracking-wide text-bs-foreground-dark">Typical Scope</th>
+        <th class="px-5 py-4 text-xs uppercase tracking-wide text-bs-foreground-dark">Example Services</th>
+      </tr>
+    </thead>
+    <tbody>
+      {(rows || []).map((row) => (
+        <tr class="border-b border-bs-surface-3 last:border-b-0">
+          <td class="px-5 py-4 text-white font-semibold">{row.tier}</td>
+          <td class="px-5 py-4 text-bs-foreground-light">{row.best_for}</td>
+          <td class="px-5 py-4 text-bs-foreground-light">{row.typical_scope}</td>
+          <td class="px-5 py-4 text-bs-foreground-light">{row.example_services}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

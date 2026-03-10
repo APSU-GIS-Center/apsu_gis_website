@@ -5,7 +5,7 @@ default:
     @just --list
 
 # Start the development server
-dev:
+run:
     pnpm dev
 
 # Build the production site

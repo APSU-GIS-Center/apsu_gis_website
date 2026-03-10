@@ -122,3 +122,16 @@ Status key: `[ ] not run` `[~] in progress` `[x] pass` `[!] fail`
 ## Known Environment Constraints
 - `pnpm build` still fails in this environment due permissions on `node_modules/.vite/deps` (`EACCES`).
 - Audits above were executed against dev server with runtime overlay issues removed.
+
+## Feature 001 Validation Update (2026-03-10)
+
+Scope:
+- Reimagined Services page and Services dropdown behavior
+
+Findings logged for implementation pass:
+- Feature-level accessibility verification for task T037 marked complete.
+- Services dropdown interaction issue reported by tester: menu stayed open more reliably via chevron than label click.
+- Remediation applied in `src/components/HeaderMain.astro`: first click on Services label now opens submenu, subsequent click navigates.
+
+Follow-up:
+- Re-run the dropdown manual checklist (T017) to confirm improved first-click usability after remediation.

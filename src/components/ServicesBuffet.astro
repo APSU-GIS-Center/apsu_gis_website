@@ -1,0 +1,80 @@
+---
+import AffordabilityBadge from './AffordabilityBadge.astro';
+
+interface ServiceItem {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  audience: string[];
+  affordability_tier: string;
+  expected_outcome: string;
+  service_category: string;
+  capabilities: string[];
+  proof_point?: string;
+  cta_text: string;
+  cta_link: string;
+  fallback_text: string;
+  fallback_link: string;
+  active: boolean;
+}
+
+interface Props {
+  services: ServiceItem[];
+}
+
+const { services } = Astro.props;
+const activeServices = (services || []).filter((service) => service.active !== false);
+---
+
+<div class="grid md:grid-cols-2 gap-6">
+  {activeServices.map((service) => (
+    <article id={service.slug} class="bg-bs-surface-2 border border-bs-surface-3 rounded-2xl p-6">
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <h3 class="text-2xl font-bold text-white">{service.title}</h3>
+        <AffordabilityBadge tier={service.affordability_tier} />
+      </div>
+
+      <p class="text-bs-foreground-light mb-4">{service.summary || 'Scope details available on request.'}</p>
+
+      <div class="mb-4">
+        <p class="text-xs uppercase tracking-wide text-bs-foreground-dark mb-2">Best For</p>
+        <div class="flex flex-wrap gap-2">
+          {(service.audience || ['General GIS stakeholders']).map((item) => (
+            <span class="rounded-full border border-bs-surface-3 px-3 py-1 text-xs text-bs-foreground-light">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs uppercase tracking-wide text-bs-foreground-dark mb-2">Expected Outcome</p>
+        <p class="text-white">{service.expected_outcome || 'Outcome details will be defined during scoping.'}</p>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs uppercase tracking-wide text-bs-foreground-dark mb-2">Capabilities</p>
+        <ul class="space-y-1 text-bs-foreground-light">
+          {(service.capabilities || []).slice(0, 3).map((capability) => (
+            <li class="flex items-start gap-2">
+              <span class="text-apsu-red mt-1">•</span>
+              <span>{capability}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {service.proof_point && (
+        <p class="text-sm text-bs-foreground-dark mb-5">{service.proof_point}</p>
+      )}
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href={service.cta_link || '/contact'} class="bs-btn bg-apsu-red hover:bg-red-700 text-white border-none">
+          {service.cta_text || 'Request Service Details'}
+        </a>
+        <a href={service.fallback_link || '/contact'} class="bs-btn !bg-transparent border border-bs-surface-3 text-bs-foreground-light hover:text-white">
+          Fallback Contact Path
+        </a>
+      </div>
+    </article>
+  ))}
+</div>

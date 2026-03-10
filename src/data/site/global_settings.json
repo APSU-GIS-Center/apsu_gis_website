@@ -20,30 +20,36 @@
       "submenu": [
         {
           "title": "Public Safety",
-          "link": "/services#public-safety"
+          "link": "/services#public-safety",
+          "enabled": true
         },
         {
           "title": "Economic Development",
-          "link": "/services#economic-development"
+          "link": "/services#economic-development",
+          "enabled": true
         },
         {
           "title": "Municipal Solutions",
-          "link": "/services#municipal-solutions"
+          "link": "/services#municipal-solutions",
+          "enabled": true
         },
         {
           "title": "Campus Mapping",
-          "link": "/services#campus-mapping"
+          "link": "/services#campus-mapping",
+          "enabled": true
         },
         {
           "title": "—"
         },
         {
           "title": "Standard Engravables",
-          "link": "/services/makerspace/standard-engravables"
+          "link": "/services/makerspace/standard-engravables",
+          "enabled": true
         },
         {
           "title": "Custom Awards",
-          "link": "/services/makerspace/custom-awards"
+          "link": "/services/makerspace/custom-awards",
+          "enabled": true
         }
       ]
     },
